@@ -6,30 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <title>MEME GENERATOR!</title>
-    <link rel='icon' href="./logo/favicon.ico"/>
+    <script src="https://kit.fontawesome.com/dac0826608.js" crossorigin="anonymous"></script>
+    <link rel='icon' href="./logo/favicon.ico" />
 </head>
 
 <body>
     <!-- header -->
     <header class="main-header">
-        <div class="header-warpper flex space space-between">
+        <div class="header-warpper flex space-between">
             <div class="logo">
                 <img src="DESIGN/LOGO/LOGO.png" alt="website logo" class="flex align-center">
             </div>
             <ul class="header-link clean-list flex align-center">
-                <li><a href="#">Joural</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Contact</a></li>
+                <!-- <li><a href="#">ga</a></li> -->
+                <li><a href="#About">About</a></li>
+                <li><a href="#">upload meme</a></li>
             </ul>
             <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </header>
         </div>
-        <main class="main-container">
-            <section></section>
+        <section class="search-section">
+            <div class="search-warper flex align-center">
+                <form>
+                    <label for="search type" class="search-type"></label>
+                    <input type="text" placeholder="Search a meme.." name="search-term" />
+                </form>
+                <div class="popular-tags">#test #test#test #test#test #test </div>
+            </div>
+        </section>
+
         </main>
-    </header>
+        <main class="main-container">
+            <section class="grid-container">
+                <div>1</div>
+            </section>
+        </main>
+        <footer id="about">
+            <section class="main-footer flex a">
+                <div class="stuff flex col column"><img src="/img-stuff/ofir.jpg" alt="">
+                    <h2>Ofir Dahan</h2>
+                        <h3>Digital Marketing and Website Development</h3>
+                </div>
+                    <p class="about-stuff-text flex align-center">I'm a professional for a multi channel marketing strategy to help you to with connecting to
+                        customers and raise or create a new digital assets for your bussiness</p>
+                    </div>
+            </section>
+            <!-- <section class="copyright">
+            </section> -->
+        </footer>
+    
 
 </body>
 

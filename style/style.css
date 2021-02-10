@@ -4,12 +4,14 @@
 }
 * {
     box-sizing: border-box;
+    font-family:Poppins-Regular;
 }
 
 html {
-    font-family: lato-bold, sans-serif;
+    /* font-family: Poppins-Regular, sans-serif; */
     color: #626262;
     line-height: 1.25;
+    background-color: #22252c;
 }
 
 body {
@@ -22,10 +24,10 @@ a {
 }
 
 h2 {
-    margin: 0 0 .833em;
+    /* margin: 0 0 .833em; */
     color: #4f4e4e;
     font-weight: 900;
-    font-size: 28px;
+    /* font-size: 28px; */
     text-transform: uppercase;
 }
 /* header */
@@ -47,14 +49,14 @@ h2 {
 }
 
 .header-link a{
-    padding: 1.375rem;
+    text-transform: uppercase;
+    padding: 16px;
     font-size: 1.3125rem;
     color: #ffffff;
-    font-family:Poppins-Regular;
     font-weight: 700;
 }
 .header-link a:hover {
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
     box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.15);
     color: #21ac91;
     background-color: #fefefe;
@@ -69,7 +71,72 @@ h2 {
     font-size: 20px;
     font-weight: 100px;
 }
+/* search-section */
+.search-section {
+    height: auto;
+    background-color: #383b42;
+}
+.search-warper {
+    max-width: 980px;
+    margin: auto;
+    padding-bottom: .5625rem;
+}
+form input[type=text] {
+    margin-top: .3125rem;
+    padding: 10px;
+    font-size: 1.0625rem;
+    border: 1px solid rgb(141, 139, 139);
+    border-radius: 100px;
+    float: left;
+    width: 80%;
+    background-color: #22252c;
+    color: #fefefe;
+  }
+.popular-tags {
+    margin-left: 2px
+}
+/* grid photo */
+.grid-container {
+    /* display: grid; */
+    height: 500px;
+    background-color: #21ac91;
+}
+/* footer */
+
+/* #about {
+    height:90px; 
+    background-color: #ffffff
+} */
+.main-footer {
+    max-width: 980px;
+    margin: auto;
+}
+.stuff>img {
+    width: 200px;
+    border-radius:100px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.stuff> h2 {
+font-size: 3.125rem;
+color: black;
+margin: 0%;
+font-family: a;
+}
+.stuff>h3 {
+    color: #868e96!important;
+    font-size: 1.25rem;
+    margin: auto;
+}
+.about-stuff-text {
+    margin-left: 90px;
+    font-family:Poppins-Regular;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 /* helper* */
+
 /* flex helper */
 .flex {
     display: flex;
