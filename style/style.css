@@ -1,6 +1,6 @@
 @font-face {
     font-family: Poppins-Regular;
-    src: url(/fonts/popping/Poppins-Regular.ttf);
+    src: url(fonts/popping/Poppins-Regular.ttf);
 }
 * {
     box-sizing: border-box;
@@ -54,7 +54,7 @@ h2 {
     font-weight: 700;
 }
 .header-link a:hover {
-    border: 2px solid #ffffff;
+    border: 1px solid #ffffff;
     box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.15);
     color: #21ac91;
     background-color: #fefefe;
