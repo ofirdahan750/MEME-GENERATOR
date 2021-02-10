@@ -1,6 +1,6 @@
 @font-face {
     font-family: Poppins-Regular;
-    src: url(fonts/popping/Poppins-Regular.ttf);
+    src: url(/fonts/popping/Poppins-Regular.ttf);
 }
 * {
     box-sizing: border-box;
