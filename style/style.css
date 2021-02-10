@@ -32,7 +32,7 @@ h2 {
 .main-header {
     height: 4.5625rem;
     background-image: linear-gradient(-86deg, #33be6d 0%, #0c98b9 100%);
-    
+    border-bottom : 2px solid black;
 }
 .header-warpper {
     max-width: 980px;
@@ -61,7 +61,16 @@ h2 {
     border-radius: 100px
     
 }
+.menu-btn {
+    display: none;
+    background-image: linear-gradient(-86deg, #33be6d 0%, #0c98b9 100%);
+    border-radius:100px;
+    border:2px solid black;
+    font-size: 20px;
+    font-weight: 100px;
+}
 /* helper* */
+/* flex helper */
 .flex {
     display: flex;
 }
@@ -105,4 +114,17 @@ h2 {
     margin: 0;
     padding: 0;
     list-style-type: none;
+}
+
+/* media query */
+/* tablet */
+
+/* moblie */
+@media only screen and (max-width: 760px) {
+.header-link {
+    display: none;
+}
+.menu-btn {
+    display: block;
+}
 }
