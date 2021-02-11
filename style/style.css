@@ -72,6 +72,14 @@ height: 100px;
     font-weight: 100px;
     height: 70px;
 }
+/* add new meme hidden secation*/
+.upload-modal-warper {
+    max-width: 980px;
+    margin: auto;
+    /* padding-bottom: 10px; */
+}
+
+
 /* search-section */
 .search-section {
     height: auto;

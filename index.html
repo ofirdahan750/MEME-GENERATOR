@@ -22,11 +22,16 @@
             <ul class="header-link clean-list flex align-center">
                 <!-- <li><a href="#">ga</a></li> -->
                 <li><a href="#about">About</a></li>
-                <li><a href="#">upload meme</a></li>
+                <li><a id="upload-meme">upload meme</a></li>
             </ul>
             <button class="menu-btn hide" onclick="toggleMenu()">☰</button>
         </div>
     </header>
+    <div class="canvas-container hide">
+        <canvas id="my-canvas" width="400" height="400" style="outline:1px solid green"></canvas>
+      </div>
+    <div class="upload-modal hide"></div>
+    <div class="body-warper">
         <section class="search-section">
             <div class="search-warper flex space-around align-center">
                 <form>
@@ -56,10 +61,13 @@
             <section class="copyright">
             </section>
         </footer>
+    </div>
         <script src="js/utill.js"></script>
         <script src="js/storage-service.js"></script>
         <script src="js/gallery-service.js"></script>
         <script src="js/gallery-controller.js"></script>
+        <script src="js/editer-service.js"></script>
+        <script src="js/editer-controller.js"></script>
 </body>
 
 </html>

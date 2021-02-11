@@ -5,6 +5,7 @@ var gIdx
 
 
 
+
 function createImage() {
     var imgs = getFromStorage(IMG_KEY);
     if (!imgs || !imgs.length) {
@@ -37,7 +38,6 @@ function createImage() {
         
         ]
     }
-    console.log(gIdx)
     gImg = imgs;
     _saveImgToStorage();
 }
@@ -49,3 +49,9 @@ function _saveImgToStorage() {
 function getImg() {
     return gImg
 } 
+
+function addImg(obj) {
+    console.log('obj:', obj)
+    gImg.unshift(obj)
+    _saveImgToStorage();
+}
