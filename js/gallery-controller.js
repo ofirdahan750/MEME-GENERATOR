@@ -10,7 +10,7 @@ function renderImg() {
   var strHtml = imgs.map(function (img) {
     return `
     <div class="grid-warp">
-    <img class="picture" src="${img.url}" data-id="${img.id}" onclick="openCanvaModal(${img.id})">
+    <img class="picture" id="pic-${img.id}" src="${img.url}" data-id="${img.id}" onclick="openCanvaModal(this)">
     </div>
     `
   })
@@ -20,7 +20,6 @@ function openModal() {
   var elModal = document.querySelector('.upload-modal')
   elModal.classList.toggle("hide")
   renderModal(elModal)
-  
 }
 
 function renderModal(elModal){
@@ -42,7 +41,6 @@ function renderModal(elModal){
   <button onclick="openModal()">close</button>
   </div>
   `
-  // renderImg()
 }
 
 function uploadNewMeme(ev, s) {
@@ -54,6 +52,7 @@ function uploadNewMeme(ev, s) {
 
   var obj = {id:createId(), url: `${elPicName.value}`, keywords: []}
   addImg(obj)
+  openModal()
   renderImg()
   
 }
@@ -61,7 +60,6 @@ function openCanvaModal(el) {
   document.querySelector('.body-warper').classList.add('hide');
   document.querySelector('.canvas-container').classList.remove('hide');
   gElCanvas = document.getElementById('my-canvas');
-  gCtx = gElCanvas.getContext('2d');
-  console.log(el)
-  // renderCanvas()
+    gCtx = gElCanvas.getContext('2d');
+    gCtx.drawImage(el, 0, 0);
 }
