@@ -1,13 +1,17 @@
 'use strict'
 
-function renderCanvas(id) {
-    gElCanvas = document.getElementById('my-canvas')
-    gCtx = gElCanvas.getContext('2d')
-    resizeCanvas()
-    gCtx.drawImage(id, 10, 10);
-    }
-function resizeCanvas() {
-    var elContainer = document.querySelector('.canvas-container')
-    gElCanvas.width = elContainer.offsetWidth
-    gElCanvas.height = elContainer.offsetHeight
+function renderCanvas() {
+    const meme = new Image();
+    meme.src = getImgSrc();
+    gCurrRatio = calculateImgRatio(img);
+    meme.onload = () => {
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
+        addMemesText();
+        setTimeout(showFocusBorder, 5);
+    };
+}
+
+
+function calculateImgRatio(img) {
+    return img.height / img.width;
 }

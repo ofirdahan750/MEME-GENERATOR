@@ -55,3 +55,12 @@ function addImg(obj) {
     gImg.unshift(obj)
     _saveImgToStorage();
 }
+function setMemeImage(id) {
+    gMeme.selectedImgId = id;
+}
+function getMemeById(memeId) {
+    var meme = gImg.find(function(meme) {
+        return memeId === meme.id
+    })
+    return meme
+}

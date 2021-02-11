@@ -3,7 +3,6 @@
 window.onload = function () {
   createImage();
   renderImg();
-  var test=1
   document.getElementById("upload-meme").addEventListener("click", openModal);
 };
 function renderImg() {
@@ -11,7 +10,7 @@ function renderImg() {
   var strHtml = imgs.map(function (img) {
     return `
     <div class="grid-warp">
-    <div class="picture" style="background-image: url(${img.url})" onclick="openCanvaModal(this)"></div>
+    <img class="picture" src="${img.url}" data-id="${img.id}" onclick="openCanvaModal(${img.id})">
     </div>
     `
   })
@@ -58,10 +57,11 @@ function uploadNewMeme(ev, s) {
   renderImg()
   
 }
-function openCanvaModal(id) {
-id
-  console.log('id:', id)
-  // document.querySelector('.body-warper').classList.add('hide');
-  // document.querySelector('.canvas-container').classList.remove('hide');
-  // renderCanvas(id)
+function openCanvaModal(el) {
+  document.querySelector('.body-warper').classList.add('hide');
+  document.querySelector('.canvas-container').classList.remove('hide');
+  gElCanvas = document.getElementById('my-canvas');
+  gCtx = gElCanvas.getContext('2d');
+  console.log(el)
+  // renderCanvas()
 }
