@@ -18,7 +18,3 @@ var strHtml=imgs.map(function(img) {
 })
 document.querySelector('.grid-container').innerHTML=strHtml.join('')
 }
-
-// return `<div class="picture picture${img.id}">
-// <img src="${img.url}" >
-// </div>`
