@@ -39,15 +39,15 @@ function drawText(selected = 0) {
     var font = gMeme.lines[gMeme.selectedLineIdx].font
     var color = gMeme.lines[gMeme.selectedLineIdx].color
     gCtx.beginPath()
-    gCtx.lineWidth = 2
-    gCtx.strokeStyle = 'orange'
+    gCtx.lineWidth = 1
+    gCtx.strokeStyle = 'black'
     gCtx.fillStyle = color
     gCtx.font = `${fontSize}px ${font}`
     gCtx.textAlign = 'center'
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
     gCtx.strokeStyle = selected ? 'orange' : 'white'
-    var lineHeight = fontSize * 1.25
+    var lineHeight = fontSize * 1
     var textWidth = gCtx.measureText(text).width;
     gCtx.strokeRect(x - textWidth / 2 - 10, y - lineHeight + 10, textWidth + 20, lineHeight);
 }
