@@ -2,9 +2,10 @@
     font-family: Poppins-Regular;
     src: url(./fonts/popping/Poppins-Regular.ttf);
 }
+
 * {
     box-sizing: border-box;
-    font-family:Poppins-Regular;
+    font-family: Poppins-Regular;
 }
 
 html {
@@ -30,13 +31,15 @@ h2 {
     /* font-size: 28px; */
     text-transform: uppercase;
 }
+
 /* header */
 .main-header {
-height: 100px;
+    height: 100px;
     background-image: linear-gradient(-86deg, #33be6d 0%, #0c98b9 100%);
-    border-bottom : 2px solid black;
-    font-family:Poppins-Regular;
+    border-bottom: 2px solid black;
+    font-family: Poppins-Regular;
 }
+
 .header-warpper {
     width: 100%;
     height: 90px;
@@ -48,7 +51,8 @@ height: 100px;
     width: 8.375rem;
     /* margin-top: 30px; */
 }
-.header-link a{
+
+.header-link a {
     text-transform: uppercase;
     /* padding: 16px; */
     font-size: 1.3125rem;
@@ -56,22 +60,24 @@ height: 100px;
     font-weight: 700;
     padding: 15px;
 }
+
 .header-link a:hover {
     border: 2px solid #ffffff;
     box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.15);
     color: #21ac91;
     background-color: #fefefe;
     border-radius: 100px
-    
 }
+
 .menu-btn {
     background-image: linear-gradient(-86deg, #33be6d 0%, #0c98b9 100%);
-    border-radius:100px;
-    border:2px solid black;
+    border-radius: 100px;
+    border: 2px solid black;
     font-size: 20px;
     font-weight: 100px;
     height: 70px;
 }
+
 /* add new meme hidden secation*/
 .upload-modal-warper {
     max-width: 980px;
@@ -85,13 +91,17 @@ height: 100px;
     height: auto;
     background-color: #383b42;
 }
+
 .search-warper {
     max-width: 980px;
     margin: auto;
     padding-bottom: .5625rem;
 }
 
-    
+.moblie-nav {
+    height: auto;
+    background-color: #383b42;
+}
 
 form input[type=text] {
     margin-top: .3125rem;
@@ -103,22 +113,46 @@ form input[type=text] {
     width: 100%;
     background-color: #22252c;
     color: #fefefe;
-  }
+}
+
 .popular-tags {
     margin-left: 2px
 }
+
+.canvas-container {
+    width: 60vw;
+    height: 60vh;
+    max-width: 930px;
+    margin: auto;
+    box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
+}
+
+.canvas-container>button {
+    max-width: 30px;
+    max-height: 30px;
+}
+.panel-canvas {
+    box-shadow: 1px 5px , inset 0 5px 0;
+    border-radius: 30px;
+    background-color:#383b42;
+    
+
+    /* opacity: 0.11; */
+}
+
 /* grid photo */
 .grid-container {
     padding-bottom: 50px;
     display: grid;
     min-height: 100px;
     border-bottom: 1px solid;
-    grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-auto-rows: 100px;
-    grid-gap:50px 90px
-    /* grid-area: photo; */
-    /* background-color: #21ac91; */
+    grid-gap: 50px 90px
+        /* grid-area: photo; */
+        /* background-color: #21ac91; */
 }
+
 .grid-warp {
     position: relative;
     clip-path: polygon(50% 0, 0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%);
@@ -133,6 +167,7 @@ form input[type=text] {
     height: 148.5%;
     transform: translate(-5%, -5%);
 }
+
 .picture {
     position: absolute;
     clip-path: polygon(50% 0, 0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%);
@@ -143,24 +178,25 @@ form input[type=text] {
     cursor: pointer;
     transform: translate(1px, 1px);
 }
-/* .grid-warp  {
-    background-size:cover;
-    background-repeat: no-repeat;
-    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    max-width: 1000px;
-  } */
-/* .grid-warp  {
-    background-size:cover;
-    background-repeat: no-repeat;
-    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    max-width: 1000px;
-  } */
-  
-  
 
-  
+/* .grid-warp  {
+    background-size:cover;
+    background-repeat: no-repeat;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    max-width: 1000px;
+  } */
+/* .grid-warp  {
+    background-size:cover;
+    background-repeat: no-repeat;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    max-width: 1000px;
+  } */
+
+
+
+
 /* footer */
 
 /* #about {
@@ -171,26 +207,30 @@ form input[type=text] {
     max-width: 980px;
     margin: auto;
 }
+
 .stuff>img {
     width: 200px;
-    border-radius:100px;
+    border-radius: 100px;
     font-weight: 500;
     margin-top: 10px;
 }
-.stuff> h2 {
-font-size: 3.125rem;
-color: black;
-margin: 0%;
-font-family: a;
+
+.stuff>h2 {
+    font-size: 3.125rem;
+    color: black;
+    margin: 0%;
+    font-family: a;
 }
+
 .stuff>h3 {
-    color: #868e96!important;
+    color: #868e96 !important;
     font-size: 1.25rem;
     margin: auto;
 }
+
 .about-stuff-text {
     margin-left: 90px;
-    font-family:Poppins-Regular;
+    font-family: Poppins-Regular;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -236,8 +276,9 @@ font-family: a;
 
 /* hide helper */
 .hide {
-display:none;
+    display: none;
 }
+
 /* list helpers */
 
 .clean-list {
@@ -252,34 +293,56 @@ display:none;
 /* moblie */
 @media only screen and (max-width: 760px) {
 
-.header-link {
-    display: none;
-}
-.logo>img {
-    padding-left: 5px;
-}
-.menu-btn {
-    display: block;
-    margin-left: auto;
-}
-.search-warper {
-    flex-direction: column;
-}
-.search-warper .popular-tags {
-    font-size: 25px;
-}
-  .main-footer {
-      flex-direction: column;
-  }
-  .main-footer>* {
-      margin: 0;
-      padding: 5px 5px;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-  }
+    .header-link {
+        display: none;
+    }
 
+    .main-nav {
+        font-size: 30px;
+        font-weight: 300;
+        text-transform: uppercase;
 
+        animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    .logo>img {
+        padding-left: 5px;
+    }
+
+    .menu-btn {
+        display: block;
+        margin-left: auto;
+    }
+
+    .search-warper {
+        flex-direction: column;
+    }
+
+    .search-warper .popular-tags {
+        font-size: 25px;
+    }
+
+    .main-footer {
+        flex-direction: column;
+    }
+
+    .main-footer>* {
+        margin: 0;
+        padding: 5px 5px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .canvas-container {
+        width: 85vw;
+        height: 50vh;
+        flex-direction: column;
+    }
+
+    .grid-container {
+        grid-gap: 65px 15px;
+    }
 
 
 }

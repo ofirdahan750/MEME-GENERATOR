@@ -10,11 +10,19 @@ function renderImg() {
   var strHtml = imgs.map(function (img) {
     return `
     <div class="grid-warp">
-    <img class="picture" id="pic-${img.id}" src="${img.url}" data-id="${img.id}" onclick="openCanvaModal(this)">
+    <img class="picture" id="pic-${img.id}" src="${img.url}"  onclick="openMemeEditer('${img.id}')">
     </div>
     `
   })
   document.querySelector('.grid-container').innerHTML = strHtml.join('')
+}
+function toggleMenu() {
+  var elMoblieNav = document.querySelector('.moblie-nav')
+  if(elMoblieNav.style.display == 'block')
+  elMoblieNav.style.display = 'none';
+else
+elMoblieNav.style.display = 'block';
+  
 }
 function openModal() {
   var elModal = document.querySelector('.upload-modal')
@@ -22,19 +30,17 @@ function openModal() {
   renderModal(elModal)
 }
 
-function renderModal(elModal){
+function renderModal(elModal) {
   elModal.innerHTML = `
   <div class="upload-modal-warper flex space around">
   <h2 class="flex">Add New Meme:</h2>
   <form class="uploading flex space around" onsubmit="uploadNewMeme(event, this)">
-  <label class="flex column align-center" for= "new meme-name"> Name:openCanvaModal
-  <input type="text" name="new-meme-name" placeholder="Meme Name" >
-  </label>
+
   <label class="flex column align-center" for= "new meme-tag"> tags:
   <input type="text" name="new-meme-tag" placeholder="Add tags">
   </label>
-  <label  class="flex column"for= "new meme-upload"> upload:
-  <input type="file" name="new-meme-file" >
+  <label class="flex column" for= "new meme-url"> url source:
+  <input type="url" name="new-meme-url" placeholder="https://example.com" pattern="https://.*" size="30" required>
   </label>
   <button>Save</button>
   </form> 
@@ -44,22 +50,27 @@ function renderModal(elModal){
 }
 
 function uploadNewMeme(ev, s) {
-  console.log('s:', s)
   ev.preventDefault();
-  var elTxtName = document.querySelector('input[name=new-meme-name]');
+  //var elTxtName = document.querySelector('input[name=new-meme-name]');
   var elTagName = document.querySelector('input[name=new-meme-tag]');
-  var elPicName = document.querySelector('input[name=new-meme-file]')
+  var elPicUrl = document.querySelector('input[name=new-meme-url]')
 
-  var obj = {id:createId(), url: `${elPicName.value}`, keywords: []}
+  var obj = { id: createId(), url: `${elPicUrl.value}`, keywords: [] }
   addImg(obj)
   openModal()
   renderImg()
-  
 }
-function openCanvaModal(el) {
+function openMemeEditer(picId) {
   document.querySelector('.body-warper').classList.add('hide');
-  document.querySelector('.canvas-container').classList.remove('hide');
-  gElCanvas = document.getElementById('my-canvas');
-    gCtx = gElCanvas.getContext('2d');
-    gCtx.drawImage(el, 0, 0);
+  document.querySelector('.canvas-container').classList.remove('hide')
+  updateCurrMeme(picId)
+  renderCanvas()
+}
+
+function searchImg() {
+  var elSearch = document.querySelector('input[name=search-term]');
+  const fliterGrid = gImgs.filter((img) => {
+    return img.keywords === ['tru']
+  })
+    console.log('fliterGrid:', fliterGrid)
 }
