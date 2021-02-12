@@ -46,7 +46,7 @@ function drawText(selected = 0) {
     gCtx.textAlign = 'center'
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
-    gCtx.strokeStyle = selected ? 'orange' : 'white'
+    gCtx.strokeStyle = selected ? 'black' : 'white'
     var lineHeight = fontSize * 1
     var textWidth = gCtx.measureText(text).width;
     gCtx.strokeRect(x - textWidth / 2 - 10, y - lineHeight + 10, textWidth + 20, lineHeight);
