@@ -36,7 +36,7 @@ function renderUploadModal(elModal) {
   <form class="uploading flex space around" onsubmit="uploadNewMeme(event, this)">
 
   <label class="flex column" for= "new meme-tag"> tags:(Use the comma mark to separate each tag )
-  <input type="text" name="new-meme-tag" placeholder="Add tags">
+  <input type="text" name="new-meme-tag" placeholder="Add tags" required>
   </label>
   <label class="flex column" for= "new meme-url"> url source:
   <input type="url" name="new-meme-url" placeholder="https://example.com" pattern="https://.*" size="30" required>

@@ -117,7 +117,16 @@ function changeColor(el) {
     gMeme.lines[gMeme.selectedLineIdx].color=el.value
     renderCanvas()
 }
-function changeFont(el) {
+function changeFontSize(el) {
     gMeme.lines[gMeme.selectedLineIdx].font=el.value
     renderCanvas()
+}
+function changeFontType(el) {
+    gMeme.lines[gMeme.selectedLineIdx].size=el.value
+    renderCanvas()
+}
+
+function downloadImg(el) {
+    let imgContent = gElCanvas.toDataURL('image/jpeg')
+    el.href = imgContent
 }

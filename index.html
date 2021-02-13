@@ -30,6 +30,7 @@
             </section>
         </div>
     </header>
+    <div class="upload-modal hide"></div>
     <div class="canvas-container flex hide">
         <canvas id="my-canvas" height="450" width="450"></canvas>
         <div class="panel-canvas flex column">
@@ -40,21 +41,33 @@
         <button class="btn-canva" onclick="moveLineDown()"><i class="fas fa-arrow-down"></i>LineDown<i class="fas fa-arrow-down"></i></button>
         <button class="btn-canva" onclick="moveLineLeft()"><i class="fas fa-arrow-left"></i>LineLeft<i class="fas fa-arrow-left"></i></button>
         <button class="btn-canva" onclick="moveLineRight()"><i class="fas fa-arrow-right"></i>LineRight<i class="fas fa-arrow-right"></i></button>
-            <label >Select color:</label>
-        <input type="color" onchange="changeColor(this)" style="margin: auto;">
-    </label>
-        <button class="btn-canva">
+            <label class="flex">Select color:   <input type="color" onchange="changeColor(this)""></label>
+        <button href="#" class="btn-canva" onclick="downloadImg(this)" download="my-img.jpg"">
             Download Meme<i class="fas fa-download"></i></button>
         <label>Select Font:</label>
-        <select name="font" onchange="changeFont(this)"> 
+        <select name="font" onchange="changeFontSize(this)"> 
             <option value="IMPACT">IMPACT</option>
             <option value="Courier New">Courier New</option>
             <option value="Gill Sans">Gill Sans</option>
             <option value="Arial">Arial</option>
           </select>
+        <label>Font size:</label>
+        <select name="font" onchange="changeFontType(this)"> 
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="14">14</option>
+            <option value="18">18</option>
+            <option value="24">24</option>
+            <option value="30">30</option>
+            <option value="36">36</option>
+            <option value="48">48</option>
+            <option value="60">60</option>
+            <option value="60">72</option>
+          </select>
     </div>
       </div>
-    <div class="upload-modal hide"></div>
+   
     <div class="body-warper">
         <section class="search-section">
             <div class="search-warper flex space-around align-center">
