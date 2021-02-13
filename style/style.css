@@ -152,7 +152,7 @@ form input[type=text] {
 .grid-warp {
     position: relative;
     clip-path: polygon(50% 0, 0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%);
-    width: 100%;
+    width: auto;
     height: 135%;
     transform: translate(-1px, -1px);
     background-color: rgba(0, 0, 0, 0.35);
