@@ -16,6 +16,19 @@
       opacity: 1;
     }
   }
+  @keyframes tracking-out-contract {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+  }
+  
   
 * {
     box-sizing: border-box;
@@ -27,6 +40,7 @@ html {
     color: #626262;
     line-height: 1.25;
     background-color: #22252c;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -45,7 +59,9 @@ h2 {
     /* font-size: 28px; */
     text-transform: uppercase;
 }
-
+button:hover {
+    cursor: pointer;
+}
 /* header */
 .main-header {
     height: 100px;
@@ -63,6 +79,7 @@ h2 {
 
 .logo>img {
     width: 8.375rem;
+        cursor: pointer;
     /* margin-top: 30px; */
 }
 
@@ -73,10 +90,10 @@ h2 {
     color: #ffffff;
     font-weight: 700;
     margin: 15px;
-    animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 .header-link a:hover {
+    cursor: pointer;
     border: 2px solid #ffffff;
     box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.15);
     color: #21ac91;
@@ -284,7 +301,7 @@ form input[type=text] {
 }
 
 /* media query */
-/* tablet */
+
 
 /* moblie */
 @media only screen and (max-width: 760px) {
@@ -294,9 +311,7 @@ form input[type=text] {
     .header-link {
         flex-direction: column;
         text-decoration: underline;
-        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-
-    }
+        animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;    }
 
     
     .header-link>:not(:last-child) {

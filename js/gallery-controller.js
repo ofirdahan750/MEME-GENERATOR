@@ -3,7 +3,9 @@
 window.onload = function () {
   createImage();
   renderImg();
-  document.getElementById("upload-meme").addEventListener("click", openModal);
+  document.getElementById("upload-meme").addEventListener("click", openUploadModal);
+  document.getElementById("gallery").addEventListener("click", gallery);
+  document.getElementById("logo").addEventListener("click", gallery);
   
 };
 function renderImg() {
@@ -17,15 +19,11 @@ function renderImg() {
   })
   document.querySelector('.grid-container').innerHTML = strHtml.join('')
 }
-function toggleMenu() {
-  var elMoblieNav = document.querySelector('.moblie-nav')
-  if(elMoblieNav.style.display == 'block')
-  elMoblieNav.style.display = 'none';
-else
-elMoblieNav.style.display = 'block';
-  
+function gallery() {
+  document.querySelector('.canvas-container').classList.add('hide')
+  document.querySelector('.body-warper').classList.remove('hide')
 }
-function openModal() {
+function openUploadModal() {
   var elModal = document.querySelector('.upload-modal')
   elModal.classList.toggle("hide")
   renderUploadModal(elModal)
@@ -79,7 +77,6 @@ function searchImg() {
 })
     gImgs = fliterGrid
     renderImg()
-
 }
 
 function toggleMenu() {
