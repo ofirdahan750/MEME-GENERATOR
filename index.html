@@ -21,16 +21,12 @@
             </div>
             <ul class="header-link clean-list flex align-center">
                 <li><a href="#about">About</a></li>
-                <li><a id="upload-meme">upload meme</a></li>
+                <li><a id="upload-meme">upload</a></li>
+                <li><a id="upload-meme">gallery</a></li>
             </ul>
-            <button class="menu-btn hide" onclick="toggleMenu()">☰</button>
-            <section class="moblie-nav flex hide" hidden>
-                <div>
-                <ul class="header-link clean-list flex column">
-                    <li><a href="#about">About</a></li>
-                    <li><a id="upload-meme">upload meme</a></li>
-                  </ul>
-                </div>
+            <button class="menu-btn flex hide" onclick="toggleMenu()">☰</button>
+            </div>
+                
             </section>
         </div>
         <section class="moblie-nav flex hide" hidden>
@@ -42,19 +38,22 @@
             </div>
         </section>
     </header>
-
     <div class="canvas-container flex hide">
         <canvas id="my-canvas" height="450" width="450"style="outline:1px solid green"></canvas>
         <div class="panel-canvas flex column">
             <input type="text" placeholder="meme-text" oninput="updateText(this)">
-        <button class="btn-canva"><i class="fas fa-arrow-up"></i></button>
-        <button class="btn-canva"><i class="fas fa-arrow-down"></i></button>
-        <button class="btn-canva"><i class="fas fa-arrow-left"></i></button>
-        <button class="btn-canva"><i class="fas fa-arrow-right"></i></button>
-        <button class="btn-canva"><i class="fas fa-trash-alt"></i></button>
-        <input type="color">
-        <button class="btn-canva"><i class="fas fa-download"></i></button>
-        <select name="font">
+        <button class="btn-canva" onclick="addNewLine()"><i class="fas fa-plus-circle"></i>Add new line<i class="fas fa-plus-circle"></i></button>
+        <button class="btn-canva"onclick="deleteLine()"><i class="fas fa-trash-alt"></i>Delete line<i class="fas fa-trash-alt"></i></button>
+        <button class="btn-canva"><i class="fas fa-arrow-up"></i>LineUp<i class="fas fa-arrow-up"></i></button>
+        <button class="btn-canva"><i class="fas fa-arrow-down"></i>LineDown<i class="fas fa-arrow-down"></i></button>
+        <button class="btn-canva"><i class="fas fa-arrow-left"></i>LineLeft<i class="fas fa-arrow-left"></i></button>
+        <button class="btn-canva"><i class="fas fa-arrow-right"></i>LineRight<i class="fas fa-arrow-right"></i></button>
+            <label style="font-weight:400;color:rgb(253, 253, 253);text-align: center;">Select color:</label>
+        <input type="color" style="margin-left: 65px;">
+    </label>
+        <button class="btn-canva">Download Meme<i class="fas fa-download"></i></button>
+        <label style="font-weight:400;color:rgb(253, 253, 253);text-align: center;">Select Font:</label>
+        <select name="font"> 
             <option value="IMPACT">IMPACT</option>
             <option value="Courier New">Courier New</option>
             <option value="Gill Sans">Gill Sans</option>
@@ -71,7 +70,6 @@
                     <label for="search type" class="search-type"></label>
                     <input type="text" placeholder="Search a meme...&#128269;" name="search-term" />
                 </form>
-                <div class="popular-tags align-center">#test #test#test #test#test #test </div>
             </div>
         </section>
 

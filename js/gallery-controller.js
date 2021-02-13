@@ -4,13 +4,14 @@ window.onload = function () {
   createImage();
   renderImg();
   document.getElementById("upload-meme").addEventListener("click", openModal);
+  
 };
 function renderImg() {
   var imgs = getImg()
   var strHtml = imgs.map(function (img) {
     return `
     <div class="grid-warp">
-    <img class="picture" id="pic-${img.id}" src="${img.url}"  onclick="openMemeEditer('${img.id}')">
+    <img class="picture" id="pic-${img.id}" src="${img.url}"  onclick="openMemeEditer('${img.id}','${img.url}')">
     </div>
     `
   })
@@ -60,10 +61,11 @@ function uploadNewMeme(ev, s) {
   openModal()
   renderImg()
 }
-function openMemeEditer(picId) {
+function openMemeEditer(picId,picUrl) {
   document.querySelector('.body-warper').classList.add('hide');
   document.querySelector('.canvas-container').classList.remove('hide')
-  updateCurrMeme(picId)
+  updateCurrMemeId(picId)
+  updateCurrMemeUrl(picUrl)
   renderCanvas()
 }
 
@@ -73,4 +75,9 @@ function searchImg() {
     return img.keywords === ['tru']
   })
     console.log('fliterGrid:', fliterGrid)
+}
+
+function toggleMenu() {
+var elHeaderLink = document.querySelector('.header-link')
+elHeaderLink.classList.toggle('hide')
 }

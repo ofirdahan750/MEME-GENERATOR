@@ -1,19 +1,22 @@
 'use strict'
 
 
-function updateCurrMeme(picId) {
+function updateCurrMemeId(picId) {
     gMeme.selectedImgId = picId;
+}
+function updateCurrMemeUrl(picUrl) {
+    gMeme.url = picUrl;
 }
 
 function renderCanvas() {
-    drawImg(gMeme.selectedImgId)
+    drawImg(gMeme.url)
    
 }
 
 function drawImg(imageId) {
-    gMeme.selectedImgId = imageId
+    //gMeme.selectedImgId = imageId
     const img = new Image()
-    img.src = `meme-imgs/${gMeme.selectedImgId}.jpg`;
+    img.src = `${imageId}`;
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)  
         renderText()
@@ -46,8 +49,48 @@ function drawText(selected = 0) {
     gCtx.textAlign = 'center'
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
-    gCtx.strokeStyle = selected ? 'black' : 'white'
-    var lineHeight = fontSize * 1
-    var textWidth = gCtx.measureText(text).width;
-    gCtx.strokeRect(x - textWidth / 2 - 10, y - lineHeight + 10, textWidth + 20, lineHeight);
+
+}
+
+function updateText(elThis) {
+    if (!gMeme.lines.length) return false
+    gCurrLine = elThis.value
+    gMeme.lines[gMeme.selectedLineIdx].txt = gCurrLine
+    renderCanvas()
+}
+
+function addNewLine() {
+    if (!gCurrLine) return
+    let line = {
+        pos: {
+            x: 220,
+            y: getNewLineY()
+        },
+        txt: getText(),
+        size: 50,
+        align: 'center',
+        color: 'white',
+        font: 'IMPACT',
+    }
+    gMeme.lines.push(line)
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
+    renderText()
+}
+
+function getNewLineY() {
+    if (lineY >= gElCanvas.width) return lineY=50
+    else {
+   return lineY+=50
+    }
+}
+
+function deleteLine() {
+    if (gMeme.lines.length === 0) return
+    gMeme.lines.splice([gMeme.selectedLineIdx], 1)
+    gMeme.selectedLineIdx = 0
+    renderCanvas()
+}
+
+function getText() {
+    return gCurrLine
 }

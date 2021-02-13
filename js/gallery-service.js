@@ -4,10 +4,12 @@ var gImgs
 var gIdx
 var gElCanvas = document.getElementById('my-canvas');
 var gCtx = gElCanvas.getContext('2d');
+var lineY=50
 
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
+    url:null,
     lines: [
         {
             txt: 'place your text here',
