@@ -127,6 +127,6 @@ function changeFontType(el) {
 }
 
 function downloadImg(el) {
-    let imgContent = gElCanvas.toDataURL('image/jpeg')
+    let imgContent = gElCanvas.toDataURL('image/jpg')
     el.href = imgContent
 }

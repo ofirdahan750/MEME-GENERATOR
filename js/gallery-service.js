@@ -2,7 +2,7 @@
 const IMG_KEY = 'imgs';
 let gImgs
 let gIdx = 0
-const gElCanvas = document.getElementById('my-canvas');
+let gElCanvas = document.getElementById('my-canvas');
 const gCtx = gElCanvas.getContext('2d');
 let fliterGrid
 let elSearch
