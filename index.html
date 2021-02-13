@@ -25,9 +25,9 @@
                 <li><a id="gallery">gallery</a></li>
             </ul>
             <button class="menu-btn flex hide " onclick="toggleMenu()">☰</button>
-            </div>
-                
-            </section>
+        </div>
+
+        </section>
         </div>
     </header>
     <div class="upload-modal hide"></div>
@@ -35,39 +35,45 @@
         <canvas id="my-canvas" height="450" width="450"></canvas>
         <div class="panel-canvas flex column">
             <input type="text" placeholder="Add a text" onkeyup="updateText(this)" required>
-        <button class="btn-canva" onclick="addNewLine()"><i class="fas fa-plus-circle"></i>Add new line<i class="fas fa-plus-circle"></i></button>
-        <button class="btn-canva"onclick="deleteLine()"><i class="fas fa-trash-alt"></i>Delete line<i class="fas fa-trash-alt"></i></button>
-        <button class="btn-canva" onclick="moveLineUp()"><i class="fas fa-arrow-up"></i>LineUp<i class="fas fa-arrow-up"></i></button>
-        <button class="btn-canva" onclick="moveLineDown()"><i class="fas fa-arrow-down"></i>LineDown<i class="fas fa-arrow-down"></i></button>
-        <button class="btn-canva" onclick="moveLineLeft()"><i class="fas fa-arrow-left"></i>LineLeft<i class="fas fa-arrow-left"></i></button>
-        <button class="btn-canva" onclick="moveLineRight()"><i class="fas fa-arrow-right"></i>LineRight<i class="fas fa-arrow-right"></i></button>
-            <label class="flex">Select color:   <input type="color" onchange="changeColor(this)""></label>
-        <button href="#" class="btn-canva" onclick="downloadImg(this)" download="my-img.jpg">
-            Download Meme</button>
-        <label>Select Font:</label>
-        <select name="font" onchange="changeFontSize(this)"> 
-            <option value="IMPACT">IMPACT</option>
-            <option value="Courier New">Courier New</option>
-            <option value="Gill Sans">Gill Sans</option>
-            <option value="Arial">Arial</option>
-          </select>
-        <label>Font size:</label>
-        <select name="font" onchange="changeFontType(this)"> 
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="14">14</option>
-            <option value="18">18</option>
-            <option value="24">24</option>
-            <option value="30">30</option>
-            <option value="36">36</option>
-            <option value="48">48</option>
-            <option value="60">60</option>
-            <option value="60">72</option>
-          </select>
+            <button class="btn-canva" onclick="addNewLine()"><i class="fas fa-plus-circle"></i>Add new line<i
+                    class="fas fa-plus-circle"></i></button>
+            <button class="btn-canva" onclick="deleteLine()"><i class="fas fa-trash-alt"></i>Delete line<i
+                    class="fas fa-trash-alt"></i></button>
+            <button class="btn-canva" onclick="moveLineUp()"><i class="fas fa-arrow-up"></i>LineUp<i
+                    class="fas fa-arrow-up"></i></button>
+            <button class="btn-canva" onclick="moveLineDown()"><i class="fas fa-arrow-down"></i>LineDown<i
+                    class="fas fa-arrow-down"></i></button>
+            <button class="btn-canva" onclick="moveLineLeft()"><i class="fas fa-arrow-left"></i>LineLeft<i
+                    class="fas fa-arrow-left"></i></button>
+            <button class="btn-canva" onclick="moveLineRight()"><i class="fas fa-arrow-right"></i>LineRight<i
+                    class="fas fa-arrow-right"></i></button>
+            <label class="flex">Select color: <input type="color" onchange="changeColor(this)""></label>
+        <button href=" #" class="btn-canva" onclick="downloadImg(this)" download="my-img.jpg">
+                Download Meme</button>
+                <label>Select Font:</label>
+                <select name="font" onchange="changeFontSize(this)">
+                    <option value="IMPACT">IMPACT</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Gill Sans">Gill Sans</option>
+                    <option value="Arial">Arial</option>
+                </select>
+                <label>Font size:</label>
+                <select name="font" onchange="changeFontType(this)">
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="14">14</option>
+                    <option value="18">18</option>
+                    <option value="24">24</option>
+                    <option value="30">30</option>
+                    <option value="36">36</option>
+                    <option value="48">48</option>
+                    <option value="60">60</option>
+                    <option value="60">72</option>
+                </select>
+        </div>
     </div>
-      </div>
-   
+
     <div class="body-warper">
         <section class="search-section">
             <div class="search-warper flex space-around align-center">
@@ -79,34 +85,36 @@
         </section>
 
         </main>
-        
+
         <main class="main-container">
             <section class="grid-container">
             </section>
         </main>
         <footer id="about">
-            <section class="main-footer flex"> 
-        <div class="stuff flex col column"><img src="img-stuff/ofir.jpg" alt="">
+            <section class="main-footer flex">
+                <div class="stuff flex col column"><img src="img-stuff/ofir.jpg" alt="">
                     <h2>Ofir Dahan</h4>
                         <h3>Digital Marketing and Website Development</h3>
                 </div>
-                    <p class="about-stuff-text flex align-center">I'm a professional for a multi channel marketing strategy to help you to with connecting to
-                        customers and raise or create a new digital assets for your bussiness</p>
-                    
+                <p class="about-stuff-text flex align-center">I'm a professional for a multi channel marketing strategy
+                    to help you to with connecting to
+                    customers and raise or create a new digital assets for your bussiness</p>
+
             </section>
-        </div>
-            <section class="copyright">
-                <i class="far fa-copyright"></i> copyright-All rights reserved <i class="far fa-copyright"></i>
-            </section>
+
         </footer>
-    <
-</div> 
-        <script src="js/utill.js"></script>
-        <script src="js/storage-service.js"></script>
-        <script src="js/gallery-service.js"></script>
-        <script src="js/gallery-controller.js"></script>
-        <script src="js/editer-service.js"></script>
-        <script src="js/editer-controller.js"></script>
+        <section class="copyright">
+            <i class="far fa-copyright"></i> copyright-All rights reserved <i class="far fa-copyright"></i>
+        </section>
+
+    </div>
+    
+    <script src="js/utill.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/gallery-service.js"></script>
+    <script src="js/gallery-controller.js"></script>
+    <script src="js/editer-service.js"></script>
+    <script src="js/editer-controller.js"></script>
 </body>
 
 </html>
