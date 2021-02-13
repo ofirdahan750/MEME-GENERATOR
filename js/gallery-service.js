@@ -1,14 +1,14 @@
 'use strict'
 const IMG_KEY = 'imgs';
-var gImgs
-var gIdx
-var gElCanvas = document.getElementById('my-canvas');
-var gCtx = gElCanvas.getContext('2d');
-var lineY=50
-var elSearch
+let gImgs
+let gIdx = 0
+const gElCanvas = document.getElementById('my-canvas');
+const gCtx = gElCanvas.getContext('2d');
+let fliterGrid
+let elSearch
 
 
-var gMeme = {
+let gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
     url:null,
@@ -28,10 +28,10 @@ var gMeme = {
     ],
 }
 function createImage() {
-    var imgs = getFromStorage(IMG_KEY);
+    let imgs = getFromStorage(IMG_KEY);
     if (!imgs || !imgs.length) {
         gIdx = 0
-        var imgs = [
+         imgs = [
             { id: createId(), url: 'meme-imgs/1.jpg', keywords: ['trump,angry'] },
             { id: createId(), url: 'meme-imgs/2.jpg', keywords: ['dog, togther'] },
             { id: createId(), url: 'meme-imgs/3.jpg', keywords: ['baby,dog,sleep'] },
@@ -61,6 +61,9 @@ function _saveImgToStorage() {
 }
 
 function getImg() {
+    if(fliterGrid) {
+    return fliterGrid
+    }
     return gImgs
 }
 
@@ -70,10 +73,4 @@ function addImg(obj) {
 }
 function setMemeImage(id) {
     gMeme.selectedImgId = id;
-}
-function getMemeById(memeId) {
-    var meme = gImgs.find(function (meme) {
-        return memeId === meme.id
-    })
-    return meme
 }

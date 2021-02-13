@@ -164,7 +164,11 @@ form input[type=text] {
     background-color:#383b42;
     margin-bottom: 10px;
 }
-
+.btn-canva>label {
+    font-weight:400;
+    color:rgb(253, 253, 253);
+    text-align:center;
+}
 /* grid photo */
 .grid-container {
     padding-bottom: 50px;

@@ -6,17 +6,17 @@ window.onload = function () {
   document.getElementById("upload-meme").addEventListener("click", openUploadModal);
   document.getElementById("gallery").addEventListener("click", gallery);
   document.getElementById("logo").addEventListener("click", gallery);
-  
+
 };
 function renderImg() {
-  var imgs = getImg()
-  var strHtml = imgs.map(function (img) {
-    return `
+  const imgs = getImg()
+  const strHtml = imgs.map(img => 
+    `
     <div class="grid-warp">
     <img class="picture" id="pic-${img.id}" src="${img.url}"  onclick="openMemeEditer('${img.id}','${img.url}')">
     </div>
     `
-  })
+  )
   document.querySelector('.grid-container').innerHTML = strHtml.join('')
 }
 function gallery() {
@@ -24,7 +24,7 @@ function gallery() {
   document.querySelector('.body-warper').classList.remove('hide')
 }
 function openUploadModal() {
-  var elModal = document.querySelector('.upload-modal')
+  const elModal = document.querySelector('.upload-modal')
   elModal.classList.toggle("hide")
   renderUploadModal(elModal)
 }
@@ -43,23 +43,24 @@ function renderUploadModal(elModal) {
   </label>
   <button>Save</button>
   </form> 
-  <button onclick="openModal()">close</button>
+  <button onclick=" openUploadModal()">close</button>
   </div>
   `
 }
 
+
 function uploadNewMeme(ev, s) {
   ev.preventDefault();
-  var elTagName = document.querySelector('input[name=new-meme-tag]');
+  const elTagName = document.querySelector('input[name=new-meme-tag]');
 
-  var elPicUrl = document.querySelector('input[name=new-meme-url]')
+  const elPicUrl = document.querySelector('input[name=new-meme-url]')
 
-  var obj = { id: createId(), url: `${elPicUrl.value}`, keywords: [`${elTagName.value}`] }
+  const obj = { id: createId(), url: `${elPicUrl.value}`, keywords: [`${elTagName.value}`] }
   addImg(obj)
-  openModal()
+  openUploadModal()
   renderImg()
 }
-function openMemeEditer(picId,picUrl) {
+function openMemeEditer(picId, picUrl) {
   document.querySelector('.body-warper').classList.add('hide');
   document.querySelector('.canvas-container').classList.remove('hide')
   updateCurrMemeId(picId)
@@ -68,18 +69,17 @@ function openMemeEditer(picId,picUrl) {
 }
 
 function searchImg() {
-  let currGrid = getFromStorage(IMG_KEY);
+  const currGrid = getFromStorage(IMG_KEY);
   elSearch = document.querySelector('input[name=search-term]');
-  const fliterGrid = currGrid.filter((meme) => {
-    return meme.keywords.find((keyword) => {
-        return keyword.toLowerCase().startsWith(elSearch.value.toLowerCase())
-    })
-})
-    gImgs = fliterGrid
-    renderImg()
+  fliterGrid = currGrid.filter(meme =>
+    meme.keywords.find(keyword =>
+      keyword.toLowerCase().startsWith(elSearch.value.toLowerCase())
+    )
+  )
+  renderImg()
 }
 
 function toggleMenu() {
-var elHeaderLink = document.querySelector('.header-link')
-elHeaderLink.classList.toggle('hide')
+  const elHeaderLink = document.querySelector('.header-link')
+  elHeaderLink.classList.toggle('hide')
 }
