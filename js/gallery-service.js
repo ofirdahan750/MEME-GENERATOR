@@ -5,6 +5,8 @@ var gIdx
 var gElCanvas = document.getElementById('my-canvas');
 var gCtx = gElCanvas.getContext('2d');
 var lineY=50
+var elSearch
+
 
 var gMeme = {
     selectedImgId: 5,
@@ -63,7 +65,6 @@ function getImg() {
 }
 
 function addImg(obj) {
-    console.log('obj:', obj)
     gImgs.unshift(obj)
     _saveImgToStorage();
 }

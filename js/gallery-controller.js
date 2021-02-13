@@ -28,16 +28,16 @@ elMoblieNav.style.display = 'block';
 function openModal() {
   var elModal = document.querySelector('.upload-modal')
   elModal.classList.toggle("hide")
-  renderModal(elModal)
+  renderUploadModal(elModal)
 }
 
-function renderModal(elModal) {
+function renderUploadModal(elModal) {
   elModal.innerHTML = `
   <div class="upload-modal-warper flex space around">
   <h2 class="flex">Add New Meme:</h2>
   <form class="uploading flex space around" onsubmit="uploadNewMeme(event, this)">
 
-  <label class="flex column align-center" for= "new meme-tag"> tags:
+  <label class="flex column" for= "new meme-tag"> tags:(Use the comma mark to separate each tag )
   <input type="text" name="new-meme-tag" placeholder="Add tags">
   </label>
   <label class="flex column" for= "new meme-url"> url source:
@@ -52,11 +52,11 @@ function renderModal(elModal) {
 
 function uploadNewMeme(ev, s) {
   ev.preventDefault();
-  //var elTxtName = document.querySelector('input[name=new-meme-name]');
   var elTagName = document.querySelector('input[name=new-meme-tag]');
+
   var elPicUrl = document.querySelector('input[name=new-meme-url]')
 
-  var obj = { id: createId(), url: `${elPicUrl.value}`, keywords: [] }
+  var obj = { id: createId(), url: `${elPicUrl.value}`, keywords: [`${elTagName.value}`] }
   addImg(obj)
   openModal()
   renderImg()
@@ -70,11 +70,16 @@ function openMemeEditer(picId,picUrl) {
 }
 
 function searchImg() {
-  var elSearch = document.querySelector('input[name=search-term]');
-  const fliterGrid = gImgs.filter((img) => {
-    return img.keywords === ['tru']
-  })
-    console.log('fliterGrid:', fliterGrid)
+  let currGrid = getFromStorage(IMG_KEY);
+  elSearch = document.querySelector('input[name=search-term]');
+  const fliterGrid = currGrid.filter((meme) => {
+    return meme.keywords.find((keyword) => {
+        return keyword.toLowerCase().startsWith(elSearch.value.toLowerCase())
+    })
+})
+    gImgs = fliterGrid
+    renderImg()
+
 }
 
 function toggleMenu() {
