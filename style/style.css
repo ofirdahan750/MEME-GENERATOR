@@ -164,7 +164,11 @@ form input[type=text] {
     box-shadow: 1px 5px , inset 0 5px 0;
     border-radius: 30px;
     background-color:#383b42;
-    margin-bottom: 10px;
+    margin-bottom: px;
+}
+.panel-canvas >* { 
+    padding-top: 5px;
+    line-height: 2;
 }
 .btn-canva>label {
     font-weight:400;
@@ -313,9 +317,7 @@ form input[type=text] {
 }
 
 /* media query */
-@media only screen and (min-width: 760px) {
 
-}
 
 /* moblie */
 @media only screen and (max-width: 760px) {
@@ -386,6 +388,12 @@ form input[type=text] {
         width: 85vw;
         height: 50vh;
         flex-direction: column;
+    }
+    .panel-canvas  { 
+        position: relative;
+        bottom: -35px;
+        
+        
     }
 
     .grid-container {
