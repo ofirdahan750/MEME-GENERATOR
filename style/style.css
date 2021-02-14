@@ -190,6 +190,7 @@ form input[type=text] {
     height: 135%;
     transform: translate(-1px, -1px);
     background-color: rgba(0, 0, 0, 0.35);
+    object-fit: cover;
 }
 
 .grid-warp:hover {
