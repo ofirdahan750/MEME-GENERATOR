@@ -40,12 +40,13 @@ function drawText(selected = 0) {
     const fontSize = gMeme.lines[gMeme.selectedLineIdx].size
     const font = gMeme.lines[gMeme.selectedLineIdx].font
     const color = gMeme.lines[gMeme.selectedLineIdx].color
+    const textAlign = gMeme.lines[gMeme.selectedLineIdx].align
     gCtx.beginPath()
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
     gCtx.fillStyle = color
     gCtx.font = `${fontSize}px ${font}`
-    gCtx.textAlign = 'center'
+    gCtx.textAlign = textAlign
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
 
@@ -59,7 +60,8 @@ function updateText(elThis) {
 }
 
 function addNewLine() {
-    if (!gCurrLine) return
+    var  elInputtext=document.getElementById("text-meme-input").value;
+    if (!elInputtext) return
     const line = {
         pos: {
             x: 220,
@@ -73,11 +75,11 @@ function addNewLine() {
     }
     gMeme.lines.push(line)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
+     elInputtext=document.getElementById("text-meme-input").value = '';
     renderCanvas()
 }
 
 function getNewLineY() {
-    console.log(gMeme.lines.length)
     if (lineY >= gElCanvas.width || gMeme.lines.length === 0) return lineY=50
     else {
    return lineY+=50
@@ -94,19 +96,19 @@ function deleteLine() {
     renderCanvas()
 }
 function moveLineUp() {
-    gMeme.lines[gMeme.selectedLineIdx].pos.y-=5
+    gMeme.lines[gMeme.selectedLineIdx].pos.y-=15
     renderCanvas()
 }
 function moveLineDown() {
-    gMeme.lines[gMeme.selectedLineIdx].pos.y+=5
+    gMeme.lines[gMeme.selectedLineIdx].pos.y+=15
     renderCanvas()
 }
 function moveLineLeft() {
-    gMeme.lines[gMeme.selectedLineIdx].pos.x-=5
+    gMeme.lines[gMeme.selectedLineIdx].pos.x-=15
     renderCanvas()
 }
 function moveLineRight() {
-    gMeme.lines[gMeme.selectedLineIdx].pos.x+=5
+    gMeme.lines[gMeme.selectedLineIdx].pos.x+=15
     renderCanvas()
 }
 
@@ -126,7 +128,15 @@ function changeFontType(el) {
     renderCanvas()
 }
 
-function downloadImg(el) {
-    let imgContent = gElCanvas.toDataURL('image/jpg')
-    el.href = imgContent
+function downloadCanvas(elLink) {
+    const data = gElCanvas.toDataURL()
+    elLink.href = data
+    elLink.download = 'My Meme'
+}
+
+function changeAlignText(el) {
+    gMeme.lines.forEach(meme => {
+        meme.align = el.value
+    });
+    renderCanvas()
 }

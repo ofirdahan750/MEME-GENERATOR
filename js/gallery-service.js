@@ -15,7 +15,7 @@ let gMeme = {
     lines: [
         {
             txt: 'place your text here',
-            size: 50,
+            size: 48,
             pos: {
                 x: 220,
                 y: 50

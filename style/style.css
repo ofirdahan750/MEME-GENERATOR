@@ -169,6 +169,9 @@ form input[type=text] {
     color:rgb(253, 253, 253);
     text-align:center;
 }
+.download-btn {
+    color:#0e2c33
+}
 /* grid photo */
 .grid-container {
     padding-bottom: 50px;
