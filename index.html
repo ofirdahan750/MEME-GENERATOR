@@ -30,11 +30,26 @@
         </section>
         </div>
     </header>
-    <div class="upload-modal hide"></div>
+    <div class="upload-modal hide">
+        <div class="upload-modal-warper flex space around">
+            <h2 class="flex">Add New Meme:</h2>
+            <form class="uploading flex space around" onsubmit="uploadNewMeme(event, this)">
+          
+            <label class="flex column" for= "new meme-tag"> tags:(Use the comma mark to separate each tag )
+            <input type="text" name="new-meme-tag" placeholder="Add tags" required>
+            </label>
+            <label class="flex column" for= "new meme-url"> url source:
+            <input type="url" name="new-meme-url" placeholder="https://example.com" pattern="https://.*" size="30" required>
+            </label>
+            <button>Save</button>
+            </form> 
+            <button onclick=" openUploadModal()">close</button>
+            </div>
+    </div>
     <div class="canvas-container flex hide">
         <canvas id="my-canvas" height="450" width="450"></canvas>
         <div class="panel-canvas flex column">
-            <input type="text" id = "text-meme-input" placeholder="Add a text" onkeyup="updateText(this)" required>
+            <input type="text" id = "text-meme-input" placeholder="Add a text" onkeydown="updateText(this)" required>
             <button class="btn-canva" onmousedown="addNewLine()"><i class="fas fa-plus-circle"></i>Add new line<i
                     class="fas fa-plus-circle"></i></button>
             <button class="btn-canva" onclick="deleteLine()"><i class="fas fa-trash-alt"></i>Delete line<i

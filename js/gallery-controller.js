@@ -26,28 +26,7 @@ function gallery() {
 function openUploadModal() {
   const elModal = document.querySelector('.upload-modal')
   elModal.classList.toggle("hide")
-  renderUploadModal(elModal)
 }
-
-function renderUploadModal(elModal) {
-  elModal.innerHTML = `
-  <div class="upload-modal-warper flex space around">
-  <h2 class="flex">Add New Meme:</h2>
-  <form class="uploading flex space around" onsubmit="uploadNewMeme(event, this)">
-
-  <label class="flex column" for= "new meme-tag"> tags:(Use the comma mark to separate each tag )
-  <input type="text" name="new-meme-tag" placeholder="Add tags" required>
-  </label>
-  <label class="flex column" for= "new meme-url"> url source:
-  <input type="url" name="new-meme-url" placeholder="https://example.com" pattern="https://.*" size="30" required>
-  </label>
-  <button>Save</button>
-  </form> 
-  <button onclick=" openUploadModal()">close</button>
-  </div>
-  `
-}
-
 
 function uploadNewMeme(ev, s) {
   ev.preventDefault();
@@ -73,7 +52,7 @@ function searchImg() {
   elSearch = document.querySelector('input[name=search-term]');
   fliterGrid = currGrid.filter(meme =>
     meme.keywords.find(keyword =>
-      keyword.toLowerCase().startsWith(elSearch.value.toLowerCase())
+      keyword.toLowerCase().includes(elSearch.value.toLowerCase())
     )
   )
   renderImg()
