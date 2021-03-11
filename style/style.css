@@ -362,7 +362,7 @@ form input[list="keywords"] {
         /* padding-bottom: 10px; */
     }
     label.flex.column {
-        min-width: 11.25rem;
+        max-width: 11.25rem;
         justify-content: space-between;
     }
     .search-section{

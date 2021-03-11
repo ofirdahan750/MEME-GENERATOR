@@ -6,13 +6,8 @@ window.onload = function () {
   document.getElementById("upload-meme").addEventListener("click", openUploadModal);
   document.getElementById("gallery").addEventListener("click", gallery);
   document.getElementById("logo").addEventListener("click", gallery);
-  // document.querySelector('.header-link').addEventListener("onchange", test);
 
 };
-
-// function test() {
-// if()
-// }
 
 function renderImg() {
   const imgs = getImg()
@@ -28,10 +23,17 @@ function renderImg() {
 function gallery() {
   document.querySelector('.canvas-container').classList.add('hide')
   document.querySelector('.body-warper').classList.remove('hide')
+  if (window.innerWidth < 760 ) {
+    elHeaderLink.style.display = 'none'
+  }
+
 }
 function openUploadModal() {
   const elModal = document.querySelector('.upload-modal')
   elModal.classList.toggle("hide")
+  if (window.innerWidth < 760 ) {
+    elHeaderLink.style.display = 'none'
+  }
 }
 
 function uploadNewMeme(ev, s) {
@@ -76,6 +78,12 @@ elDataList.innerHTML = strHtml
 }
 
 function toggleMenu() {
-  const elHeaderLink = document.querySelector('.header-link')
+ 
   elHeaderLink.style.display = (elHeaderLink.style.display === 'none') ? 'flex' : 'none'
+}
+
+function clickAbout() {
+  if (window.innerWidth < 760 ) {
+    elHeaderLink.style.display = 'none'
+  }
 }

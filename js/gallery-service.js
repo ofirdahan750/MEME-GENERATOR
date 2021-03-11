@@ -6,7 +6,7 @@ let gElCanvas = document.getElementById('my-canvas');
 const gCtx = gElCanvas.getContext('2d');
 let fliterGrid
 let elSearch = document.querySelector('input[name=search-term]')
-
+const elHeaderLink = document.querySelector('.header-link')
 
 let gMeme = {
     selectedImgId: 5,
