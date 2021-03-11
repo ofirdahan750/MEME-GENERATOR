@@ -134,7 +134,7 @@ button:hover {
 }
 
 
-form input[type=text] {
+form input[list="keywords"] {
     margin-top: .3125rem;
     padding: 15px;
     font-size: 1.0625rem;
@@ -325,6 +325,7 @@ form input[type=text] {
         justify-content: space-between;
     }
     .header-link{
+        display: none;
         flex-direction: column;
         text-decoration: underline;
         animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
@@ -345,9 +346,9 @@ form input[type=text] {
     .menu-btn {
         display: block;
         margin: auto;
-        position: relative;
-        left: 100px;
-        bottom: 9px;
+        position: absolute;
+        top: 1%;
+        right: 1%;
     }
     .logo>img {
         margin: 0 0 0 12px;
@@ -359,6 +360,10 @@ form input[type=text] {
         align-items: center;
         margin: none;
         /* padding-bottom: 10px; */
+    }
+    label.flex.column {
+        min-width: 11.25rem;
+        justify-content: space-between;
     }
     .search-section{
         flex-direction: column;

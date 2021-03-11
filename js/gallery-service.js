@@ -5,7 +5,7 @@ let gIdx = 0
 let gElCanvas = document.getElementById('my-canvas');
 const gCtx = gElCanvas.getContext('2d');
 let fliterGrid
-let elSearch
+let elSearch = document.querySelector('input[name=search-term]')
 
 
 let gMeme = {
@@ -33,7 +33,7 @@ function createImage() {
         gIdx = 0
          imgs = [
             { id: createId(), url: 'meme-imgs/1.jpg', keywords: ['trump,angry'] },
-            { id: createId(), url: 'meme-imgs/2.jpg', keywords: ['dog, togther'] },
+            { id: createId(), url: 'meme-imgs/2.jpg', keywords: ['dog,togther'] },
             { id: createId(), url: 'meme-imgs/3.jpg', keywords: ['baby,dog,sleep'] },
             { id: createId(), url: 'meme-imgs/4.jpg', keywords: ['cat,sleep'] },
             { id: createId(), url: 'meme-imgs/5.jpg', keywords: ['baby,goal,sand,sea'] },
@@ -49,7 +49,7 @@ function createImage() {
             { id: createId(), url: 'meme-imgs/15.jpg', keywords: ['one thing not simple,man'] },
             { id: createId(), url: 'meme-imgs/16.jpg', keywords: ['space,patric'] },
             { id: createId(), url: 'meme-imgs/17.jpg', keywords: ['putin,russia'] },
-            { id: createId(), url: 'meme-imgs/18.jpg', keywords: ['toy story, buzz,woddy'] }
+            { id: createId(), url: 'meme-imgs/18.jpg', keywords: ['toy story,buzz,woddy'] }
         ]
     }
     gImgs = imgs;

@@ -6,8 +6,14 @@ window.onload = function () {
   document.getElementById("upload-meme").addEventListener("click", openUploadModal);
   document.getElementById("gallery").addEventListener("click", gallery);
   document.getElementById("logo").addEventListener("click", gallery);
+  // document.querySelector('.header-link').addEventListener("onchange", test);
 
 };
+
+// function test() {
+// if()
+// }
+
 function renderImg() {
   const imgs = getImg()
   const strHtml = imgs.map(img => 
@@ -48,8 +54,9 @@ function openMemeEditer(picId, picUrl) {
 }
 
 function searchImg() {
+  console.log('test')
   const currGrid = getFromStorage(IMG_KEY);
-  elSearch = document.querySelector('input[name=search-term]');
+  // elSearch = document.querySelector('input[name=search-term]');
   fliterGrid = currGrid.filter(meme =>
     meme.keywords.find(keyword =>
       keyword.toLowerCase().includes(elSearch.value.toLowerCase())
@@ -57,8 +64,18 @@ function searchImg() {
   )
   renderImg()
 }
+function addDataList() {
+  const tags = getImg()
+  const elDataList = document.getElementById('keywords')
+  const makeNewArray = tags.map(tag => tag.keywords).join(',')
+  const strHtml = makeNewArray.split(',').map(tag =>
+    `
+    <option value="${tag}">
+    `).join('')
+elDataList.innerHTML = strHtml
+}
 
 function toggleMenu() {
   const elHeaderLink = document.querySelector('.header-link')
-  elHeaderLink.classList.toggle('hide')
+  elHeaderLink.style.display = (elHeaderLink.style.display === 'none') ? 'flex' : 'none'
 }
