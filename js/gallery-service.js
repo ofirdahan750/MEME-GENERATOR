@@ -5,13 +5,13 @@ let gIdx = 0
 let gElCanvas = document.getElementById('my-canvas');
 const gCtx = gElCanvas.getContext('2d');
 let fliterGrid
-let elSearch = document.querySelector('input[name=search-term]')
+
 const elHeaderLink = document.querySelector('.header-link')
 
 let gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
-    url:null,
+    url: null,
     lines: [
         {
             txt: 'place your text here',
@@ -23,7 +23,7 @@ let gMeme = {
             align: 'center',
             color: 'white',
             font: 'IMPACT',
-            
+
         },
     ],
 }
@@ -31,12 +31,12 @@ function createImage() {
     let imgs = getFromStorage(IMG_KEY);
     if (!imgs || !imgs.length) {
         gIdx = 0
-         imgs = [
-            { id: createId(), url: 'meme-imgs/1.jpg', keywords: ['trump,angry'] },
-            { id: createId(), url: 'meme-imgs/2.jpg', keywords: ['dog,togther'] },
-            { id: createId(), url: 'meme-imgs/3.jpg', keywords: ['baby,dog,sleep'] },
-            { id: createId(), url: 'meme-imgs/4.jpg', keywords: ['cat,sleep'] },
-            { id: createId(), url: 'meme-imgs/5.jpg', keywords: ['baby,goal,sand,sea'] },
+        imgs = [
+            { id: createId(), url: 'meme-imgs/1.jpg', keywords: ['trump','angry'] },
+            { id: createId(), url: 'meme-imgs/2.jpg', keywords: ['dog','togther'] },
+            { id: createId(), url: 'meme-imgs/3.jpg', keywords: ['baby','dog','sleep'] },
+            { id: createId(), url: 'meme-imgs/4.jpg', keywords: ['cat','sleep'] },
+            { id: createId(), url: 'meme-imgs/5.jpg', keywords: ['baby','goal','sand','sea'] },
             { id: createId(), url: 'meme-imgs/6.jpg', keywords: ['alien,history'] },
             { id: createId(), url: 'meme-imgs/7.jpg', keywords: ['suprise,baby'] },
             { id: createId(), url: 'meme-imgs/8.jpg', keywords: ['thinkin'] },
@@ -61,8 +61,8 @@ function _saveImgToStorage() {
 }
 
 function getImg() {
-    if(fliterGrid) {
-    return fliterGrid
+    if (fliterGrid) {
+        return fliterGrid
     }
     return gImgs
 }

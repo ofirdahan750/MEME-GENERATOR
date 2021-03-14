@@ -11,7 +11,7 @@ window.onload = function () {
 
 function renderImg() {
   const imgs = getImg()
-  const strHtml = imgs.map(img => 
+  const strHtml = imgs.map(img =>
     `
     <div class="grid-warp">
     <img class="picture" id="pic-${img.id}" src="${img.url}"  onclick="openMemeEditer('${img.id}','${img.url}')">
@@ -23,7 +23,7 @@ function renderImg() {
 function gallery() {
   document.querySelector('.canvas-container').classList.add('hide')
   document.querySelector('.body-warper').classList.remove('hide')
-  if (window.innerWidth < 760 ) {
+  if (window.innerWidth < 760) {
     elHeaderLink.style.display = 'none'
   }
 
@@ -31,7 +31,7 @@ function gallery() {
 function openUploadModal() {
   const elModal = document.querySelector('.upload-modal')
   elModal.classList.toggle("hide")
-  if (window.innerWidth < 760 ) {
+  if (window.innerWidth < 760) {
     elHeaderLink.style.display = 'none'
   }
 }
@@ -56,9 +56,8 @@ function openMemeEditer(picId, picUrl) {
 }
 
 function searchImg() {
-  console.log('test')
   const currGrid = getFromStorage(IMG_KEY);
-  // elSearch = document.querySelector('input[name=search-term]');
+  let elSearch = document.querySelector('input[name=search-term]')
   fliterGrid = currGrid.filter(meme =>
     meme.keywords.find(keyword =>
       keyword.toLowerCase().includes(elSearch.value.toLowerCase())
@@ -66,7 +65,8 @@ function searchImg() {
   )
   renderImg()
 }
-function addDataList() {
+function addDataList(ev) {
+  ev.preventDefault()
   const tags = getImg()
   const elDataList = document.getElementById('keywords')
   const makeNewArray = tags.map(tag => tag.keywords).join(',')
@@ -74,16 +74,16 @@ function addDataList() {
     `
     <option value="${tag}">
     `).join('')
-elDataList.innerHTML = strHtml
+  elDataList.innerHTML = strHtml
 }
 
 function toggleMenu() {
- 
+
   elHeaderLink.style.display = (elHeaderLink.style.display === 'flex') ? 'none' : 'flex'
 }
 
 function clickAbout() {
-  if (window.innerWidth < 760 ) {
+  if (window.innerWidth < 760) {
     elHeaderLink.style.display = 'none'
   }
 }

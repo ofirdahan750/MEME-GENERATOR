@@ -98,9 +98,9 @@
     <div class="body-warper">
         <section class="search-section">
             <div class="search-warper flex space-around align-center">
-                <form  onkeydown="searchImg()">
+                <form onkeyup="searchImg()">
                     <label for="search type" class="search-type"></label>
-                    <input list="keywords"  onfocus="addDataList()" autocomplete="off" placeholder="Search a meme...&#128269;" name="search-term" />
+                    <input list="keywords"  onfocus="addDataList(event)" autocomplete="off" placeholder="Search a meme...&#128269;" name="search-term" />
                     <datalist id="keywords">
                       </datalist>
                 </form>
