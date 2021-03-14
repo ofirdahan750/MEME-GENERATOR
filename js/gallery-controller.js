@@ -79,7 +79,7 @@ elDataList.innerHTML = strHtml
 
 function toggleMenu() {
  
-  elHeaderLink.style.display = (elHeaderLink.style.display === 'none') ? 'flex' : 'none'
+  elHeaderLink.style.display = (elHeaderLink.style.display === 'flex') ? 'none' : 'flex'
 }
 
 function clickAbout() {
