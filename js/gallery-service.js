@@ -61,9 +61,7 @@ function _saveImgToStorage() {
 }
 
 function getImg() {
-    if (fliterGrid) {
-        return fliterGrid
-    }
+    if (fliterGrid) return fliterGrid
     return gImgs
 }
 
