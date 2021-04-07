@@ -49,12 +49,12 @@
     <div class="canvas-container flex hide">
         <canvas id="my-canvas" height="450" width="450"></canvas>
         <div class="panel-canvas flex column">
-            <input type="text" id = "text-meme-input" placeholder="Add a text" onkeydown="updateText(this)" required>
-            <button class="btn-canva" onmousedown="addNewLine()"><i class="fas fa-plus-circle"></i>Add new line<i
+            <input type="text" id = "text-meme-input" placeholder="Add a text" onkeyup="updateText(this)" required>
+            <button class="btn-canva" onclick="addNewLine()"><i class="fas fa-plus-circle"></i>Add new line<i
                     class="fas fa-plus-circle"></i></button>
             <button class="btn-canva" onclick="deleteLine()"><i class="fas fa-trash-alt"></i>Delete line<i
                     class="fas fa-trash-alt"></i></button>
-            <button class="btn-canva" onmousedown="moveLineUp()"><i class="fas fa-arrow-up"></i>LineUp<i
+            <button class="btn-canva" onclick="moveLineUp()"><i class="fas fa-arrow-up"></i>LineUp<i
                     class="fas fa-arrow-up"></i></button>
             <button class="btn-canva" onclick="moveLineDown()"><i class="fas fa-arrow-down"></i>LineDown<i
                     class="fas fa-arrow-down"></i></button>

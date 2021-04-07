@@ -59,6 +59,14 @@ function createImage() {
 function _saveImgToStorage() {
     saveToStorage(IMG_KEY, gImgs)
 }
+function bla() {
+    var numbers = [4, 2, 5, 1, 3];
+numbers.sort(function(a, b) {
+  return a - b;
+  console.log(numbers)
+})
+console.log(numbers)
+}
 
 function getImg() {
     if (fliterGrid) return fliterGrid
