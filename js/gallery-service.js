@@ -1,56 +1,43 @@
 'use strict'
 const IMG_KEY = 'imgs';
-let gImgs
-let gIdx = 0
+let gImgs,fliterGrid,gIdx 
+
+
 let gElCanvas = document.getElementById('my-canvas');
+const elDataList = document.getElementById('keywords')
 const elSearch = document.querySelector('input[name=search-term]')
 const gCtx = gElCanvas.getContext('2d');
-let fliterGrid
-
 const elHeaderLink = document.querySelector('.header-link')
+const elCanvasContainer = document.querySelector('.canvas-container')
+const elModal = document.querySelector('.upload-modal')
+const elBodyWarper = document.querySelector('.body-warper')
+const elTagName = document.querySelector('input[name=new-meme-tag]');
+const elPicUrl = document.querySelector('input[name=new-meme-url]')
 
-let gMeme = {
-    selectedImgId: 5,
-    selectedLineIdx: 0,
-    url: null,
-    lines: [
-        {
-            txt: 'place your text here',
-            size: 48,
-            pos: {
-                x: 220,
-                y: 50
-            },
-            align: 'center',
-            color: 'white',
-            font: 'IMPACT',
 
-        },
-    ],
-}
 function createImage() {
     let imgs = getFromStorage(IMG_KEY);
     if (!imgs || !imgs.length) {
-        gIdx = 0
+        gIdx = 1
         imgs = [
-            { id: createId(), url: 'meme-imgs/1.jpg', keywords: ['Trump','Angry','Usa','U.S'] },
-            { id: createId(), url: 'meme-imgs/2.jpg', keywords: ['Dogs','Togther','Friends','Cute'] },
-            { id: createId(), url: 'meme-imgs/3.jpg', keywords: ['Baby','Dog','Sleep','Bed','Relax'] },
-            { id: createId(), url: 'meme-imgs/4.jpg', keywords: ['Cat','Sleep','Keybroad'] },
-            { id: createId(), url: 'meme-imgs/5.jpg', keywords: ['Baby','Goal','Sand','Sea'] },
-            { id: createId(), url: 'meme-imgs/6.jpg', keywords: ['Alien,History'] },
-            { id: createId(), url: 'meme-imgs/7.jpg', keywords: ['Suprise,Baby'] },
-            { id: createId(), url: 'meme-imgs/8.jpg', keywords: ['Thinkin','Hat'] },
-            { id: createId(), url: 'meme-imgs/9.jpg', keywords: ['Evil','Funny','Baby'] },
-            { id: createId(), url: 'meme-imgs/10.jpg', keywords: ['Lol','Obama','laugh','USA','U.S'] },
-            { id: createId(), url: 'meme-imgs/11.jpg', keywords: ['Kiss','Boxing'] },
-            { id: createId(), url: 'meme-imgs/12.jpg', keywords: ['Haim','What would you do?','Channel 12'] },
-            { id: createId(), url: 'meme-imgs/13.jpg', keywords: ['Party','Lerndo','Drink'] },
-            { id: createId(), url: 'meme-imgs/14.jpg', keywords: ['Matrix','Actors','What if i told','Movie','Sunglasses','Actors'] },
-            { id: createId(), url: 'meme-imgs/15.jpg', keywords: ['one thing not simple','man','Actors','MOVIE'] },
-            { id: createId(), url: 'meme-imgs/16.jpg', keywords: ['Space','Patric'] },
-            { id: createId(), url: 'meme-imgs/17.jpg', keywords: ['Putin','Russia','Suit'] },
-            { id: createId(), url: 'meme-imgs/18.jpg', keywords: ['Toy Story','Buzz','Woddy'] }
+            { id: makeId(), url:createImgName(), keywords: ['Trump','Angry','Usa','U.S'] },
+            { id: makeId(), url:createImgName(), keywords: ['Dogs','Togther','Friends','Cute'] },
+            { id: makeId(), url:createImgName(), keywords: ['Baby','Dog','Sleep','Bed','Relax'] },
+            { id: makeId(), url:createImgName(), keywords: ['Cat','Sleep','Keybroad'] },
+            { id: makeId(), url:createImgName(), keywords: ['Baby','Goal','Sand','Sea'] },
+            { id: makeId(), url:createImgName(), keywords: ['Alien,History'] },
+            { id: makeId(), url: createImgName(), keywords: ['Suprise,Baby'] },
+            { id: makeId(), url: createImgName(), keywords: ['Thinkin','Hat'] },
+            { id: makeId(), url: createImgName(), keywords: ['Evil','Funny','Baby'] },
+            { id: makeId(), url: createImgName(), keywords: ['Lol','Obama','laugh','USA','U.S'] },
+            { id: makeId(), url: createImgName(), keywords: ['Kiss','Boxing'] },
+            { id: makeId(), url: createImgName(), keywords: ['Haim','What would you do?','Channel 12'] },
+            { id: makeId(), url: createImgName(), keywords: ['Party','Lerndo','Drink'] },
+            { id: makeId(), url: createImgName(), keywords: ['Matrix','Actors','What if i told','Movie','Sunglasses','Actors'] },
+            { id: makeId(), url: createImgName(), keywords: ['one thing not simple','man','Actors','MOVIE'] },
+            { id: makeId(), url: createImgName(), keywords: ['Space','Patric'] },
+            { id: makeId(), url: createImgName(), keywords: ['Putin','Russia','Suit'] },
+            { id: makeId(), url: createImgName(), keywords: ['Toy Story','Buzz','Woddy'] }
         ]
     }
     gImgs = imgs;
@@ -73,4 +60,13 @@ function addImg(obj) {
 }
 function setMemeImage(id) {
     gMeme.selectedImgId = id;
+}
+
+function searchImg(currGrid) {
+   let filtered   = currGrid.filter(meme =>
+        meme.keywords.find(keyword =>
+          keyword.toLowerCase().includes(elSearch.value.toLowerCase())
+        )
+      )
+      return filtered;
 }

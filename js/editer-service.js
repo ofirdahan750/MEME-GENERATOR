@@ -1,5 +1,5 @@
 'use strict'
-
+let gMeme
 
 function updateCurrMemeId(picId) {
     gMeme.selectedImgId = picId;
@@ -9,11 +9,13 @@ function updateCurrMemeUrl(picUrl) {
 }
 
 function renderCanvas() {
+    
     drawImg(gMeme.url)
    
 }
 
 function drawImg(imgUrl) {
+
     const img = new Image()
     img.src = `${imgUrl}`;
     img.onload = () => {
@@ -139,4 +141,26 @@ function changeAlignText(el) {
         meme.align = el.value
     });
     renderCanvas()
+}
+
+function resetCanvas() {
+    gMeme = {
+        selectedImgId: 5,
+        selectedLineIdx: 0,
+        url: null,
+        lines: [
+            {
+                txt: 'place your text here',
+                size: 48,
+                pos: {
+                    x: 220,
+                    y: 50
+                },
+                align: 'center',
+                color: '#edecf0',
+                font: 'IMPACT',
+    
+            },
+        ],
+    }
 }
