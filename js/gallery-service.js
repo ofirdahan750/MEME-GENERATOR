@@ -3,6 +3,7 @@ const IMG_KEY = 'imgs';
 let gImgs
 let gIdx = 0
 let gElCanvas = document.getElementById('my-canvas');
+const elSearch = document.querySelector('input[name=search-term]')
 const gCtx = gElCanvas.getContext('2d');
 let fliterGrid
 
@@ -32,24 +33,24 @@ function createImage() {
     if (!imgs || !imgs.length) {
         gIdx = 0
         imgs = [
-            { id: createId(), url: 'meme-imgs/1.jpg', keywords: ['trump','angry'] },
-            { id: createId(), url: 'meme-imgs/2.jpg', keywords: ['dog','togther'] },
-            { id: createId(), url: 'meme-imgs/3.jpg', keywords: ['baby','dog','sleep'] },
-            { id: createId(), url: 'meme-imgs/4.jpg', keywords: ['cat','sleep'] },
-            { id: createId(), url: 'meme-imgs/5.jpg', keywords: ['baby','goal','sand','sea'] },
-            { id: createId(), url: 'meme-imgs/6.jpg', keywords: ['alien,history'] },
-            { id: createId(), url: 'meme-imgs/7.jpg', keywords: ['suprise,baby'] },
-            { id: createId(), url: 'meme-imgs/8.jpg', keywords: ['thinkin'] },
-            { id: createId(), url: 'meme-imgs/9.jpg', keywords: ['evil,funny,baby'] },
-            { id: createId(), url: 'meme-imgs/10.jpg', keywords: ['lol,obama'] },
-            { id: createId(), url: 'meme-imgs/11.jpg', keywords: ['kiss,boxing'] },
-            { id: createId(), url: 'meme-imgs/12.jpg', keywords: ['haim'] },
-            { id: createId(), url: 'meme-imgs/13.jpg', keywords: ['party,lerndo,drink'] },
-            { id: createId(), url: 'meme-imgs/14.jpg', keywords: ['matrix,what if i told '] },
-            { id: createId(), url: 'meme-imgs/15.jpg', keywords: ['one thing not simple,man'] },
-            { id: createId(), url: 'meme-imgs/16.jpg', keywords: ['space,patric'] },
-            { id: createId(), url: 'meme-imgs/17.jpg', keywords: ['putin,russia'] },
-            { id: createId(), url: 'meme-imgs/18.jpg', keywords: ['toy story,buzz,woddy'] }
+            { id: createId(), url: 'meme-imgs/1.jpg', keywords: ['Trump','Angry','Usa','U.S'] },
+            { id: createId(), url: 'meme-imgs/2.jpg', keywords: ['Dogs','Togther','Friends','Cute'] },
+            { id: createId(), url: 'meme-imgs/3.jpg', keywords: ['Baby','Dog','Sleep','Bed','Relax'] },
+            { id: createId(), url: 'meme-imgs/4.jpg', keywords: ['Cat','Sleep','Keybroad'] },
+            { id: createId(), url: 'meme-imgs/5.jpg', keywords: ['Baby','Goal','Sand','Sea'] },
+            { id: createId(), url: 'meme-imgs/6.jpg', keywords: ['Alien,History'] },
+            { id: createId(), url: 'meme-imgs/7.jpg', keywords: ['Suprise,Baby'] },
+            { id: createId(), url: 'meme-imgs/8.jpg', keywords: ['Thinkin','Hat'] },
+            { id: createId(), url: 'meme-imgs/9.jpg', keywords: ['Evil','Funny','Baby'] },
+            { id: createId(), url: 'meme-imgs/10.jpg', keywords: ['Lol','Obama','laugh','USA','U.S'] },
+            { id: createId(), url: 'meme-imgs/11.jpg', keywords: ['Kiss','Boxing'] },
+            { id: createId(), url: 'meme-imgs/12.jpg', keywords: ['Haim','What would you do?','Channel 12'] },
+            { id: createId(), url: 'meme-imgs/13.jpg', keywords: ['Party','Lerndo','Drink'] },
+            { id: createId(), url: 'meme-imgs/14.jpg', keywords: ['Matrix','Actors','What if i told','Movie','Sunglasses','Actors'] },
+            { id: createId(), url: 'meme-imgs/15.jpg', keywords: ['one thing not simple','man','Actors','MOVIE'] },
+            { id: createId(), url: 'meme-imgs/16.jpg', keywords: ['Space','Patric'] },
+            { id: createId(), url: 'meme-imgs/17.jpg', keywords: ['Putin','Russia','Suit'] },
+            { id: createId(), url: 'meme-imgs/18.jpg', keywords: ['Toy Story','Buzz','Woddy'] }
         ]
     }
     gImgs = imgs;
@@ -59,17 +60,10 @@ function createImage() {
 function _saveImgToStorage() {
     saveToStorage(IMG_KEY, gImgs)
 }
-function bla() {
-    var numbers = [4, 2, 5, 1, 3];
-numbers.sort(function(a, b) {
-  return a - b;
-  console.log(numbers)
-})
-console.log(numbers)
-}
+
 
 function getImg() {
-    if (fliterGrid) return fliterGrid
+    if (fliterGrid && elSearch.value.length) return fliterGrid
     return gImgs
 }
 

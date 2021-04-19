@@ -19,6 +19,7 @@ function renderImg() {
     `
   )
   document.querySelector('.grid-container').innerHTML = strHtml.join('')
+  addDataList(imgs)
 }
 function gallery() {
   document.querySelector('.canvas-container').classList.add('hide')
@@ -36,7 +37,7 @@ function openUploadModal() {
   }
 }
 
-function uploadNewMeme(ev, s) {
+function uploadNewMeme(ev) {
   ev.preventDefault();
   const elTagName = document.querySelector('input[name=new-meme-tag]');
 
@@ -57,7 +58,7 @@ function openMemeEditer(picId, picUrl) {
 
 function searchImg() {
   const currGrid = getFromStorage(IMG_KEY);
-  let elSearch = document.querySelector('input[name=search-term]')
+
   fliterGrid = currGrid.filter(meme =>
     meme.keywords.find(keyword =>
       keyword.toLowerCase().includes(elSearch.value.toLowerCase())
@@ -65,9 +66,8 @@ function searchImg() {
   )
   renderImg()
 }
-function addDataList(ev) {
-  ev.preventDefault()
-  const tags = getImg()
+function addDataList(img) {
+  const tags = img
   const elDataList = document.getElementById('keywords')
   const makeNewArray = tags.map(tag => tag.keywords).join(',')
   const strHtml = makeNewArray.split(',').map(tag =>

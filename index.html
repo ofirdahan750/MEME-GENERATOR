@@ -20,7 +20,7 @@
                 <img src="DESIGN/LOGO/LOGO.png" alt="website logo" id="logo" class="flex">
             </div>
             <ul class="header-link clean-list flex align-center">
-                <li> <a href="#about" onclick="clickAbout()">About</a></li>
+                <li> <a href="#about" onclick="onClickAbout()">About</a></li>
                 <li><a id="upload-meme">upload</a></li>
                 <li><a id="gallery">gallery</a></li>
             </ul>
@@ -100,7 +100,7 @@
             <div class="search-warper flex space-around align-center">
                 <form onkeyup="searchImg()">
                     <label for="search type" class="search-type"></label>
-                    <input list="keywords"  onfocus="addDataList(event)" autocomplete="off" placeholder="Search a meme...&#128269;" name="search-term" />
+                    <input list="keywords" autocomplete="off" placeholder="Search a meme...&#128269;" name="search-term" />
                     <datalist id="keywords">
                       </datalist>
                 </form>
@@ -113,6 +113,7 @@
             <section class="grid-container">
             </section>
         </main>
+        <div class="border"></div>
         <footer id="about">
             <section class="main-footer flex">
                 <div class="stuff flex col column"><img src="img-stuff/ofir.jpg" alt="">

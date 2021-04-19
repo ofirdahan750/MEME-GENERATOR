@@ -87,7 +87,7 @@ button:hover {
 
 .header-link a {
     text-transform: uppercase;
-    /* padding: 16px; */
+    padding: 16px;
     font-size: 1.3125rem;
     color: #ffffff;
     font-weight: 700;
@@ -96,7 +96,7 @@ button:hover {
 
 .header-link a:hover {
     cursor: pointer;
-    border: 2px solid #ffffff;
+    /* border: 2px solid #ffffff; */
     box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.15);
     color: #21ac91;
     background-color: #fefefe;
@@ -112,7 +112,7 @@ button:hover {
     height: 70px;
 }
 
-/* add new meme hidden secation*/
+/* add new meme hidden section*/
 .upload-modal-warper {
     max-width: 980px;
     flex-direction: flex;
@@ -179,12 +179,16 @@ form input[list="keywords"] {
     color:#0e2c33
 }
 /* grid photo */
+.main-container {
+    max-width: 95%;
+    margin: 0 auto;
+    
+}
 .grid-container {
     padding-top: 20px;
     padding-bottom: 50px;
     display: grid;
-    min-height: 100px;
-    border-bottom: 1px solid;
+    min-height: 150px;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-auto-rows: 100px;
     grid-gap: 40px 40px;
@@ -228,10 +232,9 @@ form input[list="keywords"] {
 
 /* footer */
 
-/* #about {
-    height:90px; 
-    background-color: #ffffff
-} */
+.border {
+    border-bottom: 1px solid;
+}
 .main-footer {
     max-width: 980px;
     margin: auto;
@@ -245,10 +248,10 @@ form input[list="keywords"] {
 }
 
 .stuff>h2 {
-    font-size: 3.125rem;
+    font-size: 2.999rem;
     color: black;
     margin: 0%;
-    font-family: a;
+    font-family: cursive;
 }
 
 .stuff>h3 {
