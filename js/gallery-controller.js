@@ -4,8 +4,9 @@ window.onload = function () {
   createImage();
   renderImg();
   document.getElementById("upload-meme").addEventListener("click", openUploadModal);
-  document.getElementById("gallery").addEventListener("click", gallery);
-  document.getElementById("logo").addEventListener("click", gallery);
+  document.getElementById("gallery").addEventListener("click", onClickGallery);
+  document.getElementById("logo").addEventListener("click", onClickGallery);
+  document.getElementById("about-link").addEventListener("click", onClickGallery);
 
 };
 
@@ -21,8 +22,9 @@ function renderImg() {
   document.querySelector('.grid-container').innerHTML = strHtml.join('')
   addDataList(imgs)
 }
-function gallery() {
+function onClickGallery() {
   document.querySelector('.canvas-container').classList.add('hide')
+  document.querySelector('.upload-modal').classList.add('hide')
   document.querySelector('.body-warper').classList.remove('hide')
   if (window.innerWidth < 760) {
     elHeaderLink.style.display = 'none'
@@ -78,12 +80,11 @@ function addDataList(img) {
 }
 
 function toggleMenu() {
-
   elHeaderLink.style.display = (elHeaderLink.style.display === 'flex') ? 'none' : 'flex'
 }
 
-function clickAbout() {
-  if (window.innerWidth < 760) {
-    elHeaderLink.style.display = 'none'
-  }
-}
+// function clickAbout() {
+//   if (window.innerWidth < 760) {
+//     elHeaderLink.style.display = 'none'
+//   }
+// }

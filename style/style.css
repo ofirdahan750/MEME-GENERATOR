@@ -382,6 +382,8 @@ form input[list="keywords"] {
 
     .main-footer {
         flex-direction: column;
+        min-width: 380px;
+        margin: 0 auto;
     }
 
     .main-footer>* {
