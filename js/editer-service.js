@@ -62,8 +62,7 @@ function updateText(elThis) {
 }
 
 function addNewLine() {
-    var elInputtext = document.getElementById("text-meme-input").value;
-    if (!elInputtext) return
+    if (!elInputtext.value) return
     const line = {
         pos: {
             x: 220,
@@ -77,7 +76,7 @@ function addNewLine() {
     }
     gMeme.lines.push(line)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
-    elInputtext = document.getElementById("text-meme-input").value = '';
+    elInputtext.value = '';
     renderCanvas()
 }
 
@@ -164,7 +163,9 @@ function resetCanvas() {
         ],
 
     }
-    const elTextSizeBtn = document.querySelector('select[name=text-size]').value = gMeme.lines.size 
-    const elTextFontBtn = document.querySelector('select[name=text-font]').value = gMeme.lines.font 
+    const firstLineMeme = gMeme.lines[0]
+    elInputtext.value = firstLineMeme.txt
+    elTextSizeBtn.value = firstLineMeme.size
+    elTextFontBtn.value = firstLineMeme.font
    
 }
