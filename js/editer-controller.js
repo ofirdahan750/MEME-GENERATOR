@@ -3,8 +3,7 @@
 function openMemeEditer(picUrl) {
     elBodyWarper.classList.add('hide');
     elCanvasContainer.classList.remove('hide')
-    resetCanvas()
-    updateCurrMemeUrl(picUrl)
+    resetCanvas(picUrl)
     renderCanvas()
   }
 
@@ -14,7 +13,6 @@ function openMemeEditer(picUrl) {
 
 
 function drawImg() {
-
     const img = new Image()
     img.src = `${gMeme.url}`;
     img.onload = () => {

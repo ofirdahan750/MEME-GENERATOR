@@ -15,9 +15,7 @@ const elTextFontBtn = document.querySelector('select[name=text-font]')
 function updateCurrMemeId(picId) {
     gMeme.selectedImgId = picId;
 }
-function updateCurrMemeUrl(picUrl) {
-    gMeme.url = picUrl;
-}
+
 
 
 
@@ -57,11 +55,11 @@ function addNewLine() {
             x: 220,
             y: getNewLineY()
         },
-        txt: getText(),
-        size: 50,
-        align: 'center',
-        color: 'white',
-        font: 'IMPACT',
+        txt:  '',
+        size: elTextSizeBtn.value,
+        align: elTextAlignBtn.value,
+        color: elTextColorBtn.value,
+        font: elTextFontBtn.value,
     }
     gMeme.lines.push(line)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
@@ -131,11 +129,11 @@ function changeAlignText(el) {
     renderCanvas()
 }
 
-function resetCanvas() {
+function resetCanvas(urlImg) {
     gMeme = {
         selectedImgId: 5,
         selectedLineIdx: 0,
-        url: null,
+        url: urlImg,
         lines: [
             {
                 txt: 'place your text here',
