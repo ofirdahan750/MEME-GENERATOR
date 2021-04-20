@@ -1,5 +1,14 @@
 'use strict'
 let gMeme
+var gCurrLine
+var lineY=50
+
+
+const elInputtext = document.querySelector('input[name=meme-text]')
+const elTextColorBtn = document.querySelector('input[name=text-color]')
+const elTextAlignBtn = document.querySelector('select[name=text-align]')
+const elTextSizeBtn = document.querySelector('select[name=text-size]')
+const elTextFontBtn = document.querySelector('select[name=text-font]')
 
 function updateCurrMemeId(picId) {
     gMeme.selectedImgId = picId;
@@ -164,6 +173,8 @@ function resetCanvas() {
 
     }
     const firstLineMeme = gMeme.lines[0]
+    elTextAlignBtn.value = firstLineMeme.align
+    elTextColorBtn.value = firstLineMeme.color
     elInputtext.value = firstLineMeme.txt
     elTextSizeBtn.value = firstLineMeme.size
     elTextFontBtn.value = firstLineMeme.font

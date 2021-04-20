@@ -62,7 +62,7 @@
                     class="fas fa-arrow-left"></i></button>
             <button class="btn-canva" onclick="moveLineRight()"><i class="fas fa-arrow-right"></i>LineRight<i
                     class="fas fa-arrow-right"></i></button>
-            <label class="flex">Select color: <input type="color" onchange="changeColor(this)""></label>
+            <label class="flex">Select color: <input type="color" name="text-color" onchange="changeColor(this)""></label>
             <button><a href="#" class ="download-btn"onclick="downloadCanvas(this)" download="">Download Your Meme<i class="fas fa-download"></i></a></button>
 
                 <label>Select Font:</label>
@@ -87,7 +87,7 @@
                     <option value="60">72</option>
                 </select>
                 <label>align text</label>
-                <select name="align-text" onchange="changeAlignText(this)">
+                <select name="text-align" onchange="changeAlignText(this)">
                     <option value="left">left</option>
                     <option value="center" selected>center</option>
                     <option value="right">right</option>
