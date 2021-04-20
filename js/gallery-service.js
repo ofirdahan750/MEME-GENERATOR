@@ -3,10 +3,10 @@ const IMG_KEY = 'imgs';
 let gImgs,fliterGrid,gIdx 
 
 
-let gElCanvas = document.getElementById('my-canvas');
+
 const elDataList = document.getElementById('keywords')
 const elSearch = document.querySelector('input[name=search-term]')
-const gCtx = gElCanvas.getContext('2d');
+
 const elHeaderLink = document.querySelector('.header-link')
 const elCanvasContainer = document.querySelector('.canvas-container')
 const elModal = document.querySelector('.upload-modal')

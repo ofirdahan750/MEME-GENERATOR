@@ -3,6 +3,8 @@ let gMeme
 var gCurrLine
 var lineY=50
 
+const gElCanvas = document.getElementById('my-canvas');
+const gCtx = gElCanvas.getContext('2d');
 
 const elInputtext = document.querySelector('input[name=meme-text]')
 const elTextColorBtn = document.querySelector('input[name=text-color]')
@@ -17,32 +19,10 @@ function updateCurrMemeUrl(picUrl) {
     gMeme.url = picUrl;
 }
 
-function renderCanvas() {
 
-    drawImg(gMeme.url)
 
-}
 
-function drawImg(imgUrl) {
 
-    const img = new Image()
-    img.src = `${imgUrl}`;
-    img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-        renderText()
-    }
-}
-
-function renderText() {
-    let currLineIdx = gMeme.selectedLineIdx;
-    gMeme.lines.forEach((lines, idx) => {
-        gMeme.selectedLineIdx = idx;
-        if (idx === currLineIdx) {
-            drawText('selected')
-        } else drawText()
-    })
-    gMeme.selectedLineIdx = currLineIdx
-}
 
 function drawText(selected = 0) {
     const text = gMeme.lines[gMeme.selectedLineIdx].txt;
@@ -173,6 +153,7 @@ function resetCanvas() {
 
     }
     const firstLineMeme = gMeme.lines[0]
+    gCurrLine = firstLineMeme.txt
     elTextAlignBtn.value = firstLineMeme.align
     elTextColorBtn.value = firstLineMeme.color
     elInputtext.value = firstLineMeme.txt

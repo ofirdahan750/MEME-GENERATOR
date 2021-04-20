@@ -46,13 +46,7 @@ function uploadNewMeme(ev) {
   openUploadModal()
   renderImg()
 }
-function openMemeEditer(picUrl) {
-  elBodyWarper.classList.add('hide');
-  elCanvasContainer.classList.remove('hide')
-  resetCanvas()
-  updateCurrMemeUrl(picUrl)
-  renderCanvas()
-}
+
 
 function onSearchImg(ev) {
   ev.preventDefault()
