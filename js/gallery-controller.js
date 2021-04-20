@@ -32,7 +32,7 @@ function onClickGallery() {
 
 }
 function openUploadModal() {
- 
+
   elModal.classList.toggle("hide")
   if (window.innerWidth < 760) {
     elHeaderLink.style.display = 'none'
@@ -49,14 +49,13 @@ function uploadNewMeme(ev) {
 function openMemeEditer(picUrl) {
   elBodyWarper.classList.add('hide');
   elCanvasContainer.classList.remove('hide')
-resetCanvas()
+  resetCanvas()
   updateCurrMemeUrl(picUrl)
   renderCanvas()
 }
 
 function onSearchImg(ev) {
   ev.preventDefault()
-
   const currGrid = getFromStorage(IMG_KEY);
   fliterGrid = searchImg(currGrid)
   setTimeout(() => {

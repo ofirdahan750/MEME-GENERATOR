@@ -382,7 +382,7 @@ form input[list="keywords"] {
 
     .main-footer {
         flex-direction: column;
-        min-width: 380px;
+        min-width: 100%;
         margin: 0 auto;
     }
 
@@ -407,6 +407,6 @@ form input[list="keywords"] {
     }
 
     .grid-container {
-        grid-gap: 65px 15px;
+        grid-gap: 65px 35px;
     }
 }
