@@ -50,30 +50,30 @@
         <canvas id="my-canvas" height="450" width="450"></canvas>
         <div class="panel-canvas flex column">
             <input name= "meme-text" type="text" id = "text-meme-input" placeholder="Add a text" onkeyup="updateText(this)" required>
-            <button class="btn-canva" onclick="addNewLine()"><i class="fas fa-plus-circle"></i>Add new line<i
+            <button class="btn-canva" onclick="onAddLine()"><i class="fas fa-plus-circle"></i>Add new line<i
                     class="fas fa-plus-circle"></i></button>
-            <button class="btn-canva" onclick="deleteLine()"><i class="fas fa-trash-alt"></i>Delete line<i
+            <button class="btn-canva" onclick="onDeleteLine()"><i class="fas fa-trash-alt"></i>Delete line<i
                     class="fas fa-trash-alt"></i></button>
-            <button class="btn-canva" onclick="moveLine('y',-15)"><i class="fas fa-arrow-up"></i>LineUp<i
+            <button class="btn-canva" onclick="onMoveLine('y',-15)"><i class="fas fa-arrow-up"></i>LineUp<i
                     class="fas fa-arrow-up"></i></button>
-            <button class="btn-canva" onclick="moveLine('y',15)"><i class="fas fa-arrow-down"></i>LineDown<i
+            <button class="btn-canva" onclick="onMoveLine('y',15)"><i class="fas fa-arrow-down"></i>LineDown<i
                     class="fas fa-arrow-down"></i></button>
-            <button class="btn-canva" onclick="moveLine('x',-15)"><i class="fas fa-arrow-left"></i>LineLeft<i
+            <button class="btn-canva" onclick="onMoveLine('x',-15)"><i class="fas fa-arrow-left"></i>LineLeft<i
                     class="fas fa-arrow-left"></i></button>
-            <button class="btn-canva" onclick="moveLine('x',15)"><i class="fas fa-arrow-right"></i>LineRight<i
+            <button class="btn-canva" onclick="onMoveLine('x',15)"><i class="fas fa-arrow-right"></i>LineRight<i
                     class="fas fa-arrow-right"></i></button>
-            <label class="flex">Select color: <input type="color" name="text-color" onchange="changeColor(this)""></label>
+            <label class="flex">Select color: <input type="color" name="text-color" onchange="onChangeFontSetting(this,'color')"></label>
             <button><a href="#" class ="download-btn"onclick="downloadCanvas(this)" download="">Download Your Meme<i class="fas fa-download"></i></a></button>
 
                 <label>Select Font:</label>
-                <select name="text-font" onchange="changeFontSize(this)">
+                <select name="text-font" onchange="onChangeFontSetting(this,'font')">
                     <option value="IMPACT" selected>IMPACT</option>
                     <option value="Courier New">Courier New</option>
                     <option value="Gill Sans">Gill Sans</option>
                     <option value="Arial">Arial</option>
                 </select>
                 <label>Font size:</label>
-                <select name="text-size" onchange="changeFontType(this)">
+                <select name="text-size" onchange="onChangeFontSetting(this,'size')">
                     <option value="8">8</option>
                     <option value="9">9</option>
                     <option value="10">10</option>
@@ -87,7 +87,7 @@
                     <option value="60">72</option>
                 </select>
                 <label>align text</label>
-                <select name="text-align" onchange="changeAlignText(this)">
+                <select name="text-align" onchange="onChangeFontSetting(this,'align')">
                     <option value="left">left</option>
                     <option value="center" selected>center</option>
                     <option value="right">right</option>

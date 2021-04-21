@@ -9,7 +9,11 @@ function openMemeEditer(picUrl) {
 
   function renderCanvas() {
     drawImg()
-    // fitInputValueToCurrLine()
+}
+function onChangeFontSetting(el,settingType) {
+    updateCurrLineVal()
+    changeFontSetting(el,settingType)
+    renderCanvas()
 }
 
 

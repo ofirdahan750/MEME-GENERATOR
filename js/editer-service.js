@@ -1,20 +1,17 @@
 'use strict'
-let gMeme
-var gCurrLine
-var lineY = 50
-let currLine
+let gMeme,gCurrLine,currLine
 const gElCanvas = document.getElementById('my-canvas');
 const gCtx = gElCanvas.getContext('2d');
+
+let lineY = 50
+
+
 
 const elInputtext = document.querySelector('input[name=meme-text]')
 const elTextColorBtn = document.querySelector('input[name=text-color]')
 const elTextAlignBtn = document.querySelector('select[name=text-align]')
 const elTextSizeBtn = document.querySelector('select[name=text-size]')
 const elTextFontBtn = document.querySelector('select[name=text-font]')
-
-function updateCurrMemeId(picId) {
-    gMeme.selectedImgId = picId;
-}
 
 
 
@@ -50,7 +47,7 @@ function updateText(elThis) {
     renderCanvas()
 }
 
-function addNewLine() {
+function onAddLine() {
     if (!elInputtext.value) return
     const line = {
         pos: {
@@ -77,7 +74,7 @@ function getNewLineY() {
     }
 }
 
-function deleteLine() {
+function onDeleteLine() {
     if (gMeme.lines.length === 1) return
     gMeme.lines.splice(-1, 1)
     gMeme.selectedLineIdx--
@@ -87,40 +84,17 @@ function deleteLine() {
     fitInputValueToCurrLine()
     renderCanvas()
 }
-function moveLine(axis, val) {
+function onMoveLine(axis, val) {
     (axis === 'x') ? currLine.pos.x += val : currLine.pos.y += val
     renderCanvas()
 }
 
-function getText() {
-    return gCurrLine
-}
-function changeColor(el) {
-    currLine.color = el.value
-    renderCanvas()
-}
-function changeFontSize(el) {
-    currLine.font = el.value
-    renderCanvas()
-}
-function changeFontType(el) {
-    currLine.size = el.value
-    renderCanvas()
-}
 
-function downloadCanvas(elLink) {
-    const data = gElCanvas.toDataURL()
-    elLink.href = data
-    elLink.download = 'My Meme'
-}
 
-function changeAlignText(el) {
-    gMeme.lines.forEach(meme => {
-        meme.align = el.value
-    });
-    renderCanvas()
-}
 
+function changeFontSetting(el,settingType){
+    currLine[settingType]= el.value
+}
 function resetCanvas(urlImg) {
     gMeme = {
         selectedImgId: 5,
@@ -147,7 +121,6 @@ function resetCanvas(urlImg) {
 
 function fitInputValueToCurrLine() {
     updateCurrLineVal()
-    // gCurrLine = currLine.txt
     elTextAlignBtn.value = currLine.align
     elTextColorBtn.value = currLine.color
     elInputtext.value = currLine.txt
