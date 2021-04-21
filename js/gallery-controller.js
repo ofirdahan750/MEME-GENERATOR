@@ -29,7 +29,7 @@ function onClickGallery() {
   elCanvasContainer.classList.add('hide')
   elModal.classList.add('hide')
   elBodyWarper.classList.remove('hide');
-  elBodyWarper.classList.remove('opacity')
+  elBodyWarper.classList.remove('opacity');
   (window.innerWidth < 760) ?  elHeaderLink.classList.add('hide') : elHeaderLink.classList.remove('hide') 
 }
 function openUploadModal() {

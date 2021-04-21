@@ -122,10 +122,13 @@ button:hover {
 }
 
 /* add new meme hidden section*/
+.upload-modal {
+    width: 100%;
+}
 .upload-modal-warper {
-    max-width: 980px;
+    max-width: 100px;
     flex-direction: flex;
-    margin: auto;
+    margin: 0 auto;
     /* padding-bottom: 10px; */
 }
 
