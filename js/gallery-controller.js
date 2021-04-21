@@ -29,9 +29,11 @@ function onClickGallery() {
   elCanvasContainer.classList.add('hide')
   elModal.classList.add('hide')
   elBodyWarper.classList.remove('hide');
+  elBodyWarper.classList.remove('opacity')
   (window.innerWidth < 760) ?  elHeaderLink.classList.add('hide') : elHeaderLink.classList.remove('hide') 
 }
 function openUploadModal() {
+  elBodyWarper.classList.remove('opacity')
   elModal.classList.toggle("hide")
   if (window.innerWidth < 760) elHeaderLink.classList.add('hide')
 }
