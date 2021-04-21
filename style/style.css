@@ -188,8 +188,8 @@ form input[list="keywords"] {
 
 .canvas-container {
     padding-top: 10px;
-    width: 60vw;
-    height: 70vh;
+    width: 100%;
+    height: 100%;
     max-width: 930px;
     margin: auto;
     /* box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff; */
@@ -233,9 +233,11 @@ form input[list="keywords"] {
 .color-picker {
     margin: 0 auto;
     height: auto;
-}
+}    
 .color-picker input{
     margin: 0 auto;
+    width: 100%;
+height: 80px;
 }
 .canvas-container>* label, select,input {
     font-weight: 400;

@@ -53,27 +53,28 @@
     <div class="canvas-container flex hide">
         <canvas id="my-canvas" height="550" width="550"></canvas>
         <div class="panel-canvas flex column">
-            <input name="meme-text" type="text" id="text-meme-input" placeholder="Add a text" onkeyup="updateText(this)"
+            <input name="meme-text" type="text" id="text-meme-input" placeholder="Add a text" onkeyup="onUpdateText(this)"
                 required>
             <button class="btn-canva" onclick="onAddLine()"><i class="fas fa-plus-circle"></i>Add new line<i
                     class="fas fa-plus-circle"></i></button>
             <button class="btn-canva" onclick="onDeleteLine()"><i class="fas fa-trash-alt"></i>Delete line<i
                     class="fas fa-trash-alt"></i></button>
-            <button class="btn-canva" onclick="onMoveLine('y',-15)"><i class="fas fa-arrow-up"></i>LineUp<i
+            <button class="btn-canva" onclick="onMoveLine('y',-15)"><i class="fas fa-arrow-up"></i>Line Up<i
                     class="fas fa-arrow-up"></i></button>
-            <button class="btn-canva" onclick="onMoveLine('y',15)"><i class="fas fa-arrow-down"></i>LineDown<i
+            <button class="btn-canva" onclick="onMoveLine('y',15)"><i class="fas fa-arrow-down"></i>Line Down<i
                     class="fas fa-arrow-down"></i></button>
-            <button class="btn-canva" onclick="onMoveLine('x',-15)"><i class="fas fa-arrow-left"></i>LineLeft<i
+            <button class="btn-canva" onclick="onMoveLine('x',-15)"><i class="fas fa-arrow-left"></i>Line Left<i
                     class="fas fa-arrow-left"></i></button>
-            <button class="btn-canva" onclick="onMoveLine('x',15)"><i class="fas fa-arrow-right"></i>LineRight<i
+            <button class="btn-canva" onclick="onMoveLine('x',15)"><i class="fas fa-arrow-right"></i>Line Right<i
                     class="fas fa-arrow-right"></i></button>
-                    <!-- <button class="download-btn" onclick="download(this)" download="">Download Your Meme<i class="fas fa-download"></i></button> -->
+                    <button onclick="onSwitchLine()"><i class="fas fa-arrow-up"></i>Switch Line<i class="fas fa-arrow-down"></i></button>
+                    <a onclick="onDownloadImg(this)" download="meme.jpg" class="download-btn"><button>Download Your Meme<i class="fas fa-download"></i></button></i></a>
             <label class="color-picker flex column"><h4>Select color:</h4>
                 <input type="color" name="text-color"
                     onchange="onChangeFontSetting(this,'color')">
                 </label>
 
-            <label>Select Font:
+            <label>Select Font::</label>
             <select name="text-font" onchange="onChangeFontSetting(this,'font')">
                 <option value="IMPACT" selected>IMPACT</option>
                 <option value="Courier New">Courier New</option>
@@ -81,7 +82,7 @@
                 <option value="Arial">Arial</option>
             </select>
         </label>
-            <label>Font size:</label>
+            <label>Font size
             <select name="text-size" onchange="onChangeFontSetting(this,'size')">
                 <option value="8">8</option>
                 <option value="9">9</option>

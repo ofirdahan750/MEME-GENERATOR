@@ -13,7 +13,7 @@ function onAddLine() {
     addLine()
     changeInputValCurrLine()
     elInputtext.value = '';
-    renderCanvas()
+    renderText()
 }
 function renderCanvas() {
     drawImg()
@@ -33,6 +33,13 @@ function onDownloadImg(elLink) {
     var imgContent = gElCanvas.toDataURL('image/jpeg')
     elLink.href = imgContent
 }
+function onSwitchLine() {
+    if (gMeme.selectedLineIdx === 0) (gMeme.selectedLineIdx = gMeme.lines.length)
+    switchLine()
+    changeInputValCurrLine()
+    updateCurrLineVal()
+}
+
 
 
 function drawImg() {
@@ -47,9 +54,5 @@ function drawImg() {
 }
 
 function renderText() {
-
-    gMeme.lines.forEach((line, idx) => {
-        gMeme.selectedLineIdx = idx;
-        drawText()
-    })
+    gMeme.lines.forEach(line => drawText(line))
 }

@@ -1,5 +1,5 @@
 'use strict'
-let gMeme,gCurrLine,currLine
+let gMeme, gCurrLine, currLine
 const gElCanvas = document.getElementById('my-canvas');
 const gCtx = gElCanvas.getContext('2d');
 
@@ -19,15 +19,15 @@ const elTextFontBtn = document.querySelector('select[name=text-font]')
 
 
 
-function drawText() {
+function drawText(line) {
     updateCurrLineVal()
-    const text = currLine.txt;
-    const x = currLine.pos.x;
-    const y = currLine.pos.y;
-    const fontSize = currLine.size
-    const font = currLine.font
-    const color = currLine.color
-    const textAlign = currLine.align
+    const text = line.txt;
+    const x = line.pos.x;
+    const y = line.pos.y;
+    const fontSize = line.size
+    const font = line.font
+    const color = line.color
+    const textAlign = line.align
     gCtx.beginPath()
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
@@ -39,11 +39,10 @@ function drawText() {
 
 }
 
-function updateText(elThis) {
+function onUpdateText(elThis) {
     if (!gMeme.lines.length) return
     updateCurrLineVal()
-    gCurrLine = elThis.value
-    currLine.txt = gCurrLine
+    currLine.txt = elThis.value
     renderCanvas()
 }
 
@@ -78,6 +77,10 @@ function deleteLine() {
         lineY -= 50
     }
 }
+function switchLine() {
+    gMeme.selectedLineIdx--
+}
+
 function onMoveLine(axis, val) {
     (axis === 'x') ? currLine.pos.x += val : currLine.pos.y += val
     renderCanvas()
@@ -86,8 +89,8 @@ function onMoveLine(axis, val) {
 
 
 
-function changeFontSetting(el,settingType){
-    currLine[settingType]= el.value
+function changeFontSetting(el, settingType) {
+    currLine[settingType] = el.value
 }
 function resetCanvas(urlImg) {
     lineY = 50
