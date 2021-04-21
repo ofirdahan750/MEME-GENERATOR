@@ -54,13 +54,13 @@
                     class="fas fa-plus-circle"></i></button>
             <button class="btn-canva" onclick="deleteLine()"><i class="fas fa-trash-alt"></i>Delete line<i
                     class="fas fa-trash-alt"></i></button>
-            <button class="btn-canva" onclick="moveLineUp()"><i class="fas fa-arrow-up"></i>LineUp<i
+            <button class="btn-canva" onclick="moveLine('y',-15)"><i class="fas fa-arrow-up"></i>LineUp<i
                     class="fas fa-arrow-up"></i></button>
-            <button class="btn-canva" onclick="moveLineDown()"><i class="fas fa-arrow-down"></i>LineDown<i
+            <button class="btn-canva" onclick="moveLine('y',15)"><i class="fas fa-arrow-down"></i>LineDown<i
                     class="fas fa-arrow-down"></i></button>
-            <button class="btn-canva" onclick="moveLineLeft()"><i class="fas fa-arrow-left"></i>LineLeft<i
+            <button class="btn-canva" onclick="moveLine('x',-15)"><i class="fas fa-arrow-left"></i>LineLeft<i
                     class="fas fa-arrow-left"></i></button>
-            <button class="btn-canva" onclick="moveLineRight()"><i class="fas fa-arrow-right"></i>LineRight<i
+            <button class="btn-canva" onclick="moveLine('x',15)"><i class="fas fa-arrow-right"></i>LineRight<i
                     class="fas fa-arrow-right"></i></button>
             <label class="flex">Select color: <input type="color" name="text-color" onchange="changeColor(this)""></label>
             <button><a href="#" class ="download-btn"onclick="downloadCanvas(this)" download="">Download Your Meme<i class="fas fa-download"></i></a></button>

@@ -7,6 +7,6 @@ function makeId(length = 5) {
      return txt;
  }
 
-function createImgName() {
-     return `meme-imgs/${gIdx++}.jpg`
+function createImgName(idx) {
+     return `meme-imgs/${idx+1}.jpg`
 }

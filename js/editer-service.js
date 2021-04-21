@@ -1,8 +1,8 @@
 'use strict'
 let gMeme
 var gCurrLine
-var lineY=50
-
+var lineY = 50
+let currLine
 const gElCanvas = document.getElementById('my-canvas');
 const gCtx = gElCanvas.getContext('2d');
 
@@ -23,13 +23,14 @@ function updateCurrMemeId(picId) {
 
 
 function drawText(selected = 0) {
-    const text = gMeme.lines[gMeme.selectedLineIdx].txt;
-    const x = gMeme.lines[gMeme.selectedLineIdx].pos.x;
-    const y = gMeme.lines[gMeme.selectedLineIdx].pos.y;
-    const fontSize = gMeme.lines[gMeme.selectedLineIdx].size
-    const font = gMeme.lines[gMeme.selectedLineIdx].font
-    const color = gMeme.lines[gMeme.selectedLineIdx].color
-    const textAlign = gMeme.lines[gMeme.selectedLineIdx].align
+    updateCurrLineVal()
+    const text = currLine.txt;
+    const x = currLine.pos.x;
+    const y = currLine.pos.y;
+    const fontSize = currLine.size
+    const font = currLine.font
+    const color = currLine.color
+    const textAlign = currLine.align
     gCtx.beginPath()
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
@@ -43,8 +44,9 @@ function drawText(selected = 0) {
 
 function updateText(elThis) {
     if (!gMeme.lines.length) return
+    updateCurrLineVal()
     gCurrLine = elThis.value
-    gMeme.lines[gMeme.selectedLineIdx].txt = gCurrLine
+    currLine.txt = gCurrLine
     renderCanvas()
 }
 
@@ -55,7 +57,7 @@ function addNewLine() {
             x: 220,
             y: getNewLineY()
         },
-        txt:  '',
+        txt: 'place your text here',
         size: elTextSizeBtn.value,
         align: elTextAlignBtn.value,
         color: elTextColorBtn.value,
@@ -63,6 +65,7 @@ function addNewLine() {
     }
     gMeme.lines.push(line)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
+    fitInputValueToCurrLine()
     elInputtext.value = '';
     renderCanvas()
 }
@@ -75,28 +78,17 @@ function getNewLineY() {
 }
 
 function deleteLine() {
-    if (gMeme.lines.length === 0) return
+    if (gMeme.lines.length === 1) return
     gMeme.lines.splice(-1, 1)
-    gMeme.selectedLineIdx -= 1
+    gMeme.selectedLineIdx--
     if (lineY > 50) {
         lineY -= 50
     }
+    fitInputValueToCurrLine()
     renderCanvas()
 }
-function moveLineUp() {
-    gMeme.lines[gMeme.selectedLineIdx].pos.y -= 15
-    renderCanvas()
-}
-function moveLineDown() {
-    gMeme.lines[gMeme.selectedLineIdx].pos.y += 15
-    renderCanvas()
-}
-function moveLineLeft() {
-    gMeme.lines[gMeme.selectedLineIdx].pos.x -= 15
-    renderCanvas()
-}
-function moveLineRight() {
-    gMeme.lines[gMeme.selectedLineIdx].pos.x += 15
+function moveLine(axis, val) {
+    (axis === 'x') ? currLine.pos.x += val : currLine.pos.y += val
     renderCanvas()
 }
 
@@ -104,15 +96,15 @@ function getText() {
     return gCurrLine
 }
 function changeColor(el) {
-    gMeme.lines[gMeme.selectedLineIdx].color = el.value
+    currLine.color = el.value
     renderCanvas()
 }
 function changeFontSize(el) {
-    gMeme.lines[gMeme.selectedLineIdx].font = el.value
+    currLine.font = el.value
     renderCanvas()
 }
 function changeFontType(el) {
-    gMeme.lines[gMeme.selectedLineIdx].size = el.value
+    currLine.size = el.value
     renderCanvas()
 }
 
@@ -150,12 +142,19 @@ function resetCanvas(urlImg) {
         ],
 
     }
-    const firstLineMeme = gMeme.lines[0]
-    gCurrLine = firstLineMeme.txt
-    elTextAlignBtn.value = firstLineMeme.align
-    elTextColorBtn.value = firstLineMeme.color
-    elInputtext.value = firstLineMeme.txt
-    elTextSizeBtn.value = firstLineMeme.size
-    elTextFontBtn.value = firstLineMeme.font
-   
+    fitInputValueToCurrLine()
+}
+
+function fitInputValueToCurrLine() {
+    updateCurrLineVal()
+    // gCurrLine = currLine.txt
+    elTextAlignBtn.value = currLine.align
+    elTextColorBtn.value = currLine.color
+    elInputtext.value = currLine.txt
+    elTextSizeBtn.value = currLine.size
+    elTextFontBtn.value = currLine.font
+}
+
+function updateCurrLineVal() {
+    currLine = gMeme.lines[gMeme.selectedLineIdx]
 }

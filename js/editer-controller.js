@@ -9,6 +9,7 @@ function openMemeEditer(picUrl) {
 
   function renderCanvas() {
     drawImg()
+    // fitInputValueToCurrLine()
 }
 
 
