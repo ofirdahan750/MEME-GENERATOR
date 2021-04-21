@@ -6,17 +6,29 @@ function openMemeEditer(picUrl) {
     elCanvasContainer.classList.remove('hide')
     resetCanvas(picUrl)
     renderCanvas()
-  }
-
-  function renderCanvas() {
-    drawImg()
 }
-function onChangeFontSetting(el,settingType) {
-    updateCurrLineVal()
-    changeFontSetting(el,settingType)
+
+function onAddLine() {
+    if (!elInputtext.value) return
+    addLine()
+    changeInputValCurrLine()
+    elInputtext.value = '';
     renderCanvas()
 }
-
+function renderCanvas() {
+    drawImg()
+}
+function onChangeFontSetting(el, settingType) {
+    updateCurrLineVal()
+    changeFontSetting(el, settingType)
+    renderCanvas()
+}
+function onDeleteLine() {
+    if (gMeme.lines.length === 1) return
+    deleteLine()
+    changeInputValCurrLine()
+    renderCanvas()
+}
 
 function drawImg() {
     const img = new Image()
@@ -28,12 +40,9 @@ function drawImg() {
 }
 
 function renderText() {
-    let currLineIdx = gMeme.selectedLineIdx;
-    gMeme.lines.forEach((lines, idx) => {
+
+    gMeme.lines.forEach((line, idx) => {
         gMeme.selectedLineIdx = idx;
-        if (idx === currLineIdx) {
-            drawText('selected')
-        } else drawText()
+        drawText()
     })
-    gMeme.selectedLineIdx = currLineIdx
 }

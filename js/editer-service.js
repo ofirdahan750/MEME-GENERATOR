@@ -19,7 +19,7 @@ const elTextFontBtn = document.querySelector('select[name=text-font]')
 
 
 
-function drawText(selected = 0) {
+function drawText() {
     updateCurrLineVal()
     const text = currLine.txt;
     const x = currLine.pos.x;
@@ -47,8 +47,7 @@ function updateText(elThis) {
     renderCanvas()
 }
 
-function onAddLine() {
-    if (!elInputtext.value) return
+function addLine() {
     const line = {
         pos: {
             x: 220,
@@ -62,9 +61,6 @@ function onAddLine() {
     }
     gMeme.lines.push(line)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
-    fitInputValueToCurrLine()
-    elInputtext.value = '';
-    renderCanvas()
 }
 
 function getNewLineY() {
@@ -74,15 +70,13 @@ function getNewLineY() {
     }
 }
 
-function onDeleteLine() {
-    if (gMeme.lines.length === 1) return
+
+function deleteLine() {
     gMeme.lines.splice(-1, 1)
     gMeme.selectedLineIdx--
     if (lineY > 50) {
         lineY -= 50
     }
-    fitInputValueToCurrLine()
-    renderCanvas()
 }
 function onMoveLine(axis, val) {
     (axis === 'x') ? currLine.pos.x += val : currLine.pos.y += val
@@ -117,10 +111,10 @@ function resetCanvas(urlImg) {
         ],
 
     }
-    fitInputValueToCurrLine()
+    changeInputValCurrLine()
 }
 
-function fitInputValueToCurrLine() {
+function changeInputValCurrLine() {
     updateCurrLineVal()
     elTextAlignBtn.value = currLine.align
     elTextColorBtn.value = currLine.color
