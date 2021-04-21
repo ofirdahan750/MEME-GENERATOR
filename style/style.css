@@ -333,9 +333,13 @@ form input[list="keywords"] {
 .clean-list {
     margin: 0;
     padding: 0;
+ 
     list-style-type: none;
 }
-
+/* opacity */
+.opacity {
+    opacity: 0.1;
+}
 /* media query */
 
 

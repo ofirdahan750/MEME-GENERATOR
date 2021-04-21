@@ -1,19 +1,18 @@
 'use strict'
 
 window.onload = () => {
+  onChangeWidth()
   createImage();
   renderImg();
   document.getElementById("upload-meme").addEventListener("click", openUploadModal);
   document.getElementById("gallery").addEventListener("click", onClickGallery);
   document.getElementById("logo").addEventListener("click", onClickGallery);
   document.getElementById("about-link").addEventListener("click", onClickGallery);
-  window.addEventListener("resize", function() {
-    (window.innerWidth < 760) ? elHeaderLink.classList.add("hide"): elHeaderLink.classList.remove("hide")
-   });
 
 };
-
-
+function onChangeWidth() {
+    (window.innerWidth < 760) ? (elHeaderLink.classList.add('hide'),elBodyWarper.classList.remove('opacity')) : elHeaderLink.classList.remove('hide')
+}
 function renderImg() {
   const imgs = getImg()
   const strHtml = imgs.map(img =>
@@ -27,7 +26,6 @@ function renderImg() {
   addDataList(imgs)
 }
 function onClickGallery() {
-  elHeaderLink.classList.remove('hide');
   elCanvasContainer.classList.add('hide')
   elModal.classList.add('hide')
   elBodyWarper.classList.remove('hide');
@@ -66,5 +64,6 @@ function addDataList(img) {
 }
 
 function toggleMenu() {
+  elBodyWarper.classList.toggle('opacity')
   elHeaderLink.classList.toggle('hide')
 }
