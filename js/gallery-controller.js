@@ -1,14 +1,18 @@
 'use strict'
 
-window.onload = function () {
+window.onload = () => {
   createImage();
   renderImg();
   document.getElementById("upload-meme").addEventListener("click", openUploadModal);
   document.getElementById("gallery").addEventListener("click", onClickGallery);
   document.getElementById("logo").addEventListener("click", onClickGallery);
   document.getElementById("about-link").addEventListener("click", onClickGallery);
+  window.addEventListener("resize", function() {
+    (window.innerWidth < 760) ? elHeaderLink.classList.add("hide"): elHeaderLink.classList.remove("hide")
+   });
 
 };
+
 
 function renderImg() {
   const imgs = getImg()
@@ -23,20 +27,15 @@ function renderImg() {
   addDataList(imgs)
 }
 function onClickGallery() {
+  elHeaderLink.classList.remove('hide');
   elCanvasContainer.classList.add('hide')
   elModal.classList.add('hide')
-  elBodyWarper.classList.remove('hide')
-  if (window.innerWidth < 760) {
-    elHeaderLink.style.display = 'none'
-  }
-
+  elBodyWarper.classList.remove('hide');
+  (window.innerWidth < 760) ?  elHeaderLink.classList.add('hide') : elHeaderLink.classList.remove('hide') 
 }
 function openUploadModal() {
-
   elModal.classList.toggle("hide")
-  if (window.innerWidth < 760) {
-    elHeaderLink.style.display = 'none'
-  }
+  if (window.innerWidth < 760) elHeaderLink.classList.add('hide')
 }
 
 function uploadNewMeme(ev) {
@@ -67,5 +66,5 @@ function addDataList(img) {
 }
 
 function toggleMenu() {
-  elHeaderLink.style.display = (elHeaderLink.style.display === 'flex') ? 'none' : 'flex'
+  elHeaderLink.classList.toggle('hide')
 }

@@ -2,34 +2,40 @@
     font-family: Poppins-Regular;
     src: url(./fonts/popping/Poppins-Regular.ttf);
 }
+
 @keyframes tracking-in-expand-fwd {
     0% {
-      letter-spacing: -0.5em;
-      transform: translateZ(-700px);
-      opacity: 0;
+        letter-spacing: -0.5em;
+        transform: translateZ(-700px);
+        opacity: 0;
     }
+
     40% {
-      opacity: 0.6;
+        opacity: 0.6;
     }
+
     100% {
-      transform: translateZ(0);
-      opacity: 1;
+        transform: translateZ(0);
+        opacity: 1;
     }
-  }
-  @keyframes tracking-out-contract {
+}
+
+@keyframes tracking-out-contract {
     0% {
-      opacity: 1;
+        opacity: 1;
     }
+
     50% {
-      opacity: 1;
+        opacity: 1;
     }
+
     100% {
-      letter-spacing: -0.5em;
-      opacity: 0;
+        letter-spacing: -0.5em;
+        opacity: 0;
     }
-  }
-  
-  
+}
+
+
 * {
     box-sizing: border-box;
     font-family: Poppins-Regular;
@@ -59,9 +65,11 @@ h2 {
     /* font-size: 28px; */
     text-transform: uppercase;
 }
+
 button:hover {
     cursor: pointer;
 }
+
 /* header */
 .main-header {
     height: 100px;
@@ -79,11 +87,12 @@ button:hover {
 
 .logo>img {
     width: 8.375rem;
-        cursor: pointer;
+    cursor: pointer;
 }
+
 .header-link {
     display: block;
-} 
+}
 
 .header-link a {
     text-transform: uppercase;
@@ -160,30 +169,36 @@ form input[list="keywords"] {
     max-width: 30px;
     max-height: 30px;
 }
+
 .panel-canvas {
-    box-shadow: 1px 5px , inset 0 5px 0;
+    box-shadow: 1px 5px, inset 0 5px 0;
     border-radius: 30px;
-    background-color:#383b42;
+    background-color: #383b42;
     margin-bottom: px;
 }
-.panel-canvas >* { 
+
+.panel-canvas>* {
     padding-top: 5px;
     line-height: 2;
 }
+
 .btn-canva>label {
-    font-weight:400;
-    color:rgb(253, 253, 253);
-    text-align:center;
+    font-weight: 400;
+    color: rgb(253, 253, 253);
+    text-align: center;
 }
+
 .download-btn {
-    color:#0e2c33
+    color: #0e2c33
 }
+
 /* grid photo */
 .main-container {
     max-width: 95%;
     margin: 0 auto;
-    
+
 }
+
 .grid-container {
     padding-top: 20px;
     padding-bottom: 50px;
@@ -221,6 +236,7 @@ form input[list="keywords"] {
     cursor: pointer;
     transform: translate(1px, 1px);
 }
+
 .copyright {
     border-top: 1px solid;
     text-transform: uppercase;
@@ -235,6 +251,7 @@ form input[list="keywords"] {
 .border {
     border-bottom: 1px solid;
 }
+
 .main-footer {
     max-width: 980px;
     margin: auto;
@@ -327,8 +344,8 @@ form input[list="keywords"] {
     .header-warpper {
         justify-content: space-between;
     }
-    .header-link{
-        display: none;
+
+    .header-link {
         flex-direction: column;
         text-decoration: underline;
         animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
@@ -339,9 +356,12 @@ form input[list="keywords"] {
         height: 100px;
         border-top: 2px solid #050e18;
         border-bottom: 2px solid #050e18;
-
+        
     }
-    
+    .header-link a {
+        padding: 0;
+    }
+
     .header-link>:not(:last-child) {
         margin-bottom: 5px;
     }
@@ -353,10 +373,12 @@ form input[list="keywords"] {
         top: 1%;
         right: 1%;
     }
+
     .logo>img {
         margin: 0 0 0 12px;
-        
+
     }
+
     .upload-modal-warper {
         max-width: 980px;
         flex-direction: column;
@@ -364,14 +386,17 @@ form input[list="keywords"] {
         margin: none;
         /* padding-bottom: 10px; */
     }
+
     label.flex.column {
         max-width: 11.25rem;
         justify-content: space-between;
     }
-    .search-section{
+
+    .search-section {
         flex-direction: column;
         height: auto;
     }
+
     .search-warper {
         flex-direction: column
     }
@@ -399,11 +424,12 @@ form input[list="keywords"] {
         height: 50vh;
         flex-direction: column;
     }
-    .panel-canvas  { 
+
+    .panel-canvas {
         position: relative;
         bottom: -35px;
-        
-        
+
+
     }
 
     .grid-container {
