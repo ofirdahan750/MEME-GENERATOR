@@ -232,6 +232,7 @@ form input[list="keywords"] {
 }
 .color-picker {
     margin: 0 auto;
+    height: auto;
 }
 .color-picker input{
     margin: 0 auto;

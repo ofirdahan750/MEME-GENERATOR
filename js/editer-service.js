@@ -126,3 +126,5 @@ function changeInputValCurrLine() {
 function updateCurrLineVal() {
     currLine = gMeme.lines[gMeme.selectedLineIdx]
 }
+
+

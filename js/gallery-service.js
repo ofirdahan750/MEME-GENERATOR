@@ -1,6 +1,6 @@
 'use strict'
 const IMG_KEY = 'imgs';
-let gImgs, fliterGrid, gIdx
+let gImgs, fliterGrid, gIdx,gCurrPicUrl
 
 let gKeywords = [
     ['Trump', 'Angry', 'Usa', 'U.S'],

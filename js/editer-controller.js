@@ -29,11 +29,18 @@ function onDeleteLine() {
     changeInputValCurrLine()
     renderCanvas()
 }
+function onDownloadImg(elLink) {
+    var imgContent = gElCanvas.toDataURL('image/jpeg')
+    elLink.href = imgContent
+}
+
 
 function drawImg() {
     const img = new Image()
     img.src = `${gMeme.url}`;
     img.onload = () => {
+        gElCanvas.width = img.width
+        gElCanvas.height = img.height
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         renderText()
     }
