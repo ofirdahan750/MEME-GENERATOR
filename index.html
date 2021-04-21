@@ -19,7 +19,7 @@
             <div class="logo flex align-center space-around">
                 <img src="DESIGN/LOGO/LOGO.png" alt="website logo" id="logo" class="flex">
             </div>
-            <ul  class="header-link clean-list flex align-center">
+            <ul class="header-link clean-list flex align-center">
                 <li> <a id="about-link" href="#about">About</a></li>
                 <li><a id="upload-meme">upload</a></li>
                 <li><a id="gallery">gallery</a></li>
@@ -31,25 +31,30 @@
         </div>
     </header>
     <div class="upload-modal hide">
-        <div class="upload-modal-warper flex space around">
-            <h2 class="flex">Add New Meme:</h2>
-            <form class="uploading flex space around" onsubmit="uploadNewMeme(event, this)">
-          
-            <label class="flex column" for= "new meme-tag"> tags:(Use the comma mark to separate each tag )
-            <input type="text" name="new-meme-tag" placeholder="Add tags" required>
-            </label>
-            <label class="flex column" for= "new meme-url"> url source:
-            <input type="url" name="new-meme-url" placeholder="https://example.com" pattern="https://.*" size="30" required>
-            </label>
-            <button>Save</button>
-            </form> 
+        <div class="upload-modal-warper flex column">
+            <h1>Add New Meme: </h1>
+            <form class="uploading flex column" onsubmit="uploadNewMeme(event, this)">
+
+                <label for="new meme-tag">
+                    <h3>Tags:</h3>
+                    <input type="text" name="new-meme-tag" placeholder="Add tags" size="39" required />
+                    <p>(Use the comma mark to separate each tag)</p>
+                </label>
+                <label for="new meme-url">
+                    <h3> url source:</h3>
+                    <input type="url" name="new-meme-url" placeholder="https://example.com" pattern="https://.*"
+                        size="39" required>
+                </label>
+                <button>Save</button>
+            </form>
             <button onclick=" openUploadModal()">close</button>
-            </div>
+        </div>
     </div>
     <div class="canvas-container flex hide">
         <canvas id="my-canvas" height="450" width="450"></canvas>
         <div class="panel-canvas flex column">
-            <input name= "meme-text" type="text" id = "text-meme-input" placeholder="Add a text" onkeyup="updateText(this)" required>
+            <input name="meme-text" type="text" id="text-meme-input" placeholder="Add a text" onkeyup="updateText(this)"
+                required>
             <button class="btn-canva" onclick="onAddLine()"><i class="fas fa-plus-circle"></i>Add new line<i
                     class="fas fa-plus-circle"></i></button>
             <button class="btn-canva" onclick="onDeleteLine()"><i class="fas fa-trash-alt"></i>Delete line<i
@@ -62,36 +67,38 @@
                     class="fas fa-arrow-left"></i></button>
             <button class="btn-canva" onclick="onMoveLine('x',15)"><i class="fas fa-arrow-right"></i>LineRight<i
                     class="fas fa-arrow-right"></i></button>
-            <label class="flex">Select color: <input type="color" name="text-color" onchange="onChangeFontSetting(this,'color')"></label>
-            <button><a href="#" class ="download-btn"onclick="downloadCanvas(this)" download="">Download Your Meme<i class="fas fa-download"></i></a></button>
+            <label class="flex">Select color: <input type="color" name="text-color"
+                    onchange="onChangeFontSetting(this,'color')"></label>
+            <button><a href="#" class="download-btn" onclick="downloadCanvas(this)" download="">Download Your Meme<i
+                        class="fas fa-download"></i></a></button>
 
-                <label>Select Font:</label>
-                <select name="text-font" onchange="onChangeFontSetting(this,'font')">
-                    <option value="IMPACT" selected>IMPACT</option>
-                    <option value="Courier New">Courier New</option>
-                    <option value="Gill Sans">Gill Sans</option>
-                    <option value="Arial">Arial</option>
-                </select>
-                <label>Font size:</label>
-                <select name="text-size" onchange="onChangeFontSetting(this,'size')">
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="14">14</option>
-                    <option value="18">18</option>
-                    <option value="24">24</option>
-                    <option value="30">30</option>
-                    <option value="36">36</option>
-                    <option value="48" selected>48</option>
-                    <option value="60">60</option>
-                    <option value="60">72</option>
-                </select>
-                <label>align text</label>
-                <select name="text-align" onchange="onChangeFontSetting(this,'align')">
-                    <option value="left">left</option>
-                    <option value="center" selected>center</option>
-                    <option value="right">right</option>
-                </select>
+            <label>Select Font:</label>
+            <select name="text-font" onchange="onChangeFontSetting(this,'font')">
+                <option value="IMPACT" selected>IMPACT</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Gill Sans">Gill Sans</option>
+                <option value="Arial">Arial</option>
+            </select>
+            <label>Font size:</label>
+            <select name="text-size" onchange="onChangeFontSetting(this,'size')">
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="14">14</option>
+                <option value="18">18</option>
+                <option value="24">24</option>
+                <option value="30">30</option>
+                <option value="36">36</option>
+                <option value="48" selected>48</option>
+                <option value="60">60</option>
+                <option value="60">72</option>
+            </select>
+            <label>align text</label>
+            <select name="text-align" onchange="onChangeFontSetting(this,'align')">
+                <option value="left">left</option>
+                <option value="center" selected>center</option>
+                <option value="right">right</option>
+            </select>
         </div>
     </div>
 
@@ -100,9 +107,10 @@
             <div class="search-warper flex space-around align-center">
                 <form onkeyup="onSearchImg(event)">
                     <label for="search type" class="search-type"></label>
-                    <input list="keywords" autocomplete="off" placeholder="Search a meme...&#128269;" name="search-term" />
+                    <input list="keywords" autocomplete="off" placeholder="Search a meme...&#128269;"
+                        name="search-term" />
                     <datalist id="keywords">
-                      </datalist>
+                    </datalist>
                 </form>
             </div>
         </section>
@@ -132,7 +140,7 @@
         </section>
 
     </div>
-    
+
     <script src="js/utill.js"></script>
     <script src="js/storage-service.js"></script>
     <script src="js/gallery-service.js"></script>

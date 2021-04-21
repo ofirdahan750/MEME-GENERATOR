@@ -1,6 +1,7 @@
 'use strict'
 
 function openMemeEditer(picUrl) {
+    elModal.classList.add('hide');
     elBodyWarper.classList.add('hide');
     elCanvasContainer.classList.remove('hide')
     resetCanvas(picUrl)
