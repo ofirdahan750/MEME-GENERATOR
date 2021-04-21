@@ -96,6 +96,7 @@ function changeFontSetting(el,settingType){
     currLine[settingType]= el.value
 }
 function resetCanvas(urlImg) {
+    lineY = 50
     gMeme = {
         selectedImgId: 5,
         selectedLineIdx: 0,
