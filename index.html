@@ -53,6 +53,7 @@
     <div class="canvas-container flex hide">
         <canvas id="my-canvas" height="450" width="450"></canvas>
         <div class="panel-canvas flex column">
+            <div class="wow">
             <input name="meme-text" type="text" id="text-meme-input" placeholder="Add a text" onkeyup="updateText(this)"
                 required>
             <button class="btn-canva" onclick="onAddLine()"><i class="fas fa-plus-circle"></i>Add new line<i
@@ -67,10 +68,13 @@
                     class="fas fa-arrow-left"></i></button>
             <button class="btn-canva" onclick="onMoveLine('x',15)"><i class="fas fa-arrow-right"></i>LineRight<i
                     class="fas fa-arrow-right"></i></button>
-            <label class="flex">Select color: <input type="color" name="text-color"
-                    onchange="onChangeFontSetting(this,'color')"></label>
-            <button><a href="#" class="download-btn" onclick="downloadCanvas(this)" download="">Download Your Meme<i
-                        class="fas fa-download"></i></a></button>
+                    <button><a  class="download-btn" onclick="downloadCanvas(this)" download="">Download Your Meme<i
+                                class="fas fa-download"></i></a></button>
+                            </div>
+            <label class="color-picker flex column"><h4>Select color:</h4>
+                <input type="color" name="text-color"
+                    onchange="onChangeFontSetting(this,'color')">
+                </label>
 
             <label>Select Font:</label>
             <select name="text-font" onchange="onChangeFontSetting(this,'font')">

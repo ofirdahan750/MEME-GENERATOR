@@ -133,7 +133,8 @@ textarea {
     border: 1px solid black;
 }
 
-.upload-modal h1, .upload-modal h3 {
+.upload-modal h1,
+.upload-modal h3 {
     text-decoration: underline;
     font-weight: 900;
 }
@@ -186,11 +187,25 @@ form input[list="keywords"] {
 
 
 .canvas-container {
+    padding-top: 10px;
     width: 60vw;
-    height: 60vh;
+    height: 70vh;
     max-width: 930px;
     margin: auto;
-    box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
+    /* box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff; */
+}
+
+.canvas-container>* button {
+    min-width: 100%;
+    margin: 0 auto;
+    border-color: #1d1e22;
+    color: rgb(179, 167, 167);
+    box-shadow: 0 0 40px 40px #1d1e22 inset, 0 0 0 0 #1d1e22;
+    transition: all 150ms ease-in-out;
+}
+
+.canvas-container>* button:hover {
+    box-shadow: 0 0 10px 0 #1d1e22 inset, 0 0 10px 4px #1d1e22;
 }
 
 .canvas-container>button {
@@ -199,26 +214,37 @@ form input[list="keywords"] {
 }
 
 .panel-canvas {
-    box-shadow: 1px 5px, inset 0 5px 0;
-    border-radius: 30px;
+    /* box-shadow: 1px 5px, inset 0 5px 0; */
+    /* border-radius: 10%; */
     background-color: #383b42;
-    margin-bottom: px;
+    
 }
 
 .panel-canvas>* {
     padding-top: 5px;
     line-height: 2;
 }
-
-.btn-canva>label {
+.canvas-container>* label {
+    text-decoration: underline;
+}
+[name="meme-text"] {
+    width: 100%;
+}
+.color-picker {
+    margin: 0 auto;
+}
+.color-picker input{
+    margin: 0 auto;
+}
+.canvas-container>* label, select,input {
     font-weight: 400;
-    color: rgb(253, 253, 253);
+    /* color: rgb(253, 253, 253); */
     text-align: center;
 }
 
-.download-btn {
-    color: #0e2c33
-}
+/* .download-btn {
+    
+} */
 
 /* grid photo */
 .main-container {
